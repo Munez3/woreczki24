@@ -112,6 +112,12 @@
    }
 }
 
+.mgr {
+   &-20{
+      margin-right: 20px;
+   }
+}
+
 .pdtb{
    &-70{
       padding-top: 20px;
@@ -141,7 +147,13 @@
          padding-bottom: 140px;
       }
    }
+
+   &-5 {
+      padding-top: 5px;
+      padding-bottom: 5px;
+   }
 }
+
 
 .col-2{
    @include media($breakpointMd){
@@ -202,4 +214,8 @@
          transform: rotate(-45deg);
       }
    }
+}
+
+.text-bold {
+   font-weight: 800;
 }

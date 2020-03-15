@@ -72,7 +72,7 @@
       </nav>
    </header>
 
-   <div class="page-header grid grid--center">
+   <div class="page-header">
       <h1 class="page-header__title">Produkty</h1>
    </div>
 
@@ -96,7 +96,7 @@
 
    <main>
       <div class="shop-item container">
-         <section class="shop-item__content grid mgt-70">
+         <section class="shop-item__content flexbox mgt-70">
             <div class="shop-item__img">
                <img src="./img/product.png" alt="Produkt" class="shop__product-img">
             </div>
@@ -104,19 +104,19 @@
                <h4 class="shop-item__title">Torebka doypack PREMIUM SILVER, 100 ml, 85x50x145 mm, PET12/ALU8/PE75 + easy
                   open</h4>
                <div class="shop-item__info">
-                  <div>Dostępność: <span>w magazynie</span></div>
-                  <div>Kosz wysyłki: <span>od 9zł</span></div>
-                  <div>Stan magazynowy: <span>() 20 kpl/100szt.</span></div>
+                  <div class="shop-item__availability pdtb-5">Dostępność: <span class="text-bold ">w magazynie</span></div>
+                  <div class="shop-item__shipping-cost pdtb-5">Kosz wysyłki: <span class="text-bold ">od 9zł</span></div>
+                  <div class="shop-item__inventory pdtb-5">Stan magazynowy: <span class="text-bold ">() 20 kpl/100szt.</span></div>
                </div>
                <div class="shop-item__price flexbox flexbox--fstart">
                   <div class="shop__price shop__price--big">27 zł</div>
-                  <select>
+                  <select class="shop-item__items-number">
                      <option>100 szt</option>                     
                   </select>
                   <a href="" class="btn">Do koszyka</a>
                </div>
                <div class="shop-item__not-available flexbox flexbox--fstart">
-                  <a href="" class="btn btn--gray">Brak</a>
+                  <a href="" class="btn btn--gray mgr-20">Brak</a>
                   <a href="" class="btn">Powiadom o dostępności</a>
                </div>
             </div>
