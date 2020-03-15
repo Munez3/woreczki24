@@ -801,6 +801,10 @@ address {
   margin-right: 20px;
 }
 
+.mgl-60 {
+  margin-left: 60px;
+}
+
 .pdtb-70 {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -872,6 +876,9 @@ address {
 }
 .btn--gray {
   background-color: #999ca0;
+}
+.btn--min-w150 {
+  min-width: 150px;
 }
 @media screen and (min-width: 992px) {
   .btn {
@@ -1516,14 +1523,40 @@ address {
   border-bottom: 1px solid #d6d7d9;
   padding-bottom: 30px;
 }
+.shop-item__inventory-available {
+  width: 20px;
+  height: 20px;
+  background-color: #4fd146;
+  border-radius: 100%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.shop-item__inventory-available--red {
+  background-color: red;
+}
 .shop-item__price {
   margin-top: 20px;
 }
 .shop-item__items-number {
   margin: 0 30px;
+  padding: 10px 20px;
 }
 .shop-item__not-available {
   margin-top: 20px;
+}
+.shop-item__profit {
+  border-top: 1px solid #d6d7d9;
+  border-bottom: 1px solid #d6d7d9;
+  padding: 35px 0;
+}
+.shop-item__profit-image {
+  width: 44px;
+  height: 36px;
+  margin-right: 20px;
+}
+.shop-item__profit-item {
+  margin-left: 70px;
+  margin-right: 70px;
 }
 
 div#__bs_notify__ {

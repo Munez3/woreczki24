@@ -18,15 +18,50 @@
     padding-bottom: 30px;
   }
 
+  &__inventory-available {
+    width: 20px;
+    height: 20px;
+    background-color: #4fd146;
+    border-radius: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+
+    &--red {
+      background-color: red;
+    }
+  }
+
   &__price {
     margin-top: 20px;
   }
 
+  &__price-add {
+    
+  }
+
   &__items-number {
     margin: 0 30px;
+    padding: 10px 20px;
   }
 
   &__not-available {
     margin-top: 20px;
+  }
+
+  &__profit {
+    border-top: 1px solid #d6d7d9;
+    border-bottom: 1px solid #d6d7d9;
+    padding: 35px 0;
+  }
+
+  &__profit-image {
+    width: 44px;
+    height: 36px;
+    margin-right: 20px;
+  }
+
+  &__profit-item {
+    margin-left: 70px;
+    margin-right: 70px;
   }
 }
