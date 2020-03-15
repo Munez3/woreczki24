@@ -29,19 +29,23 @@
       universal.$burger = $('.burger');
       universal.$navbar = $('.navbar');
 
-      universal.$down = $('.slider__down');
-
+      // universal.$down = $('.slider__down');
       universal.$slider = $('.slick-slider');
 
-      universal.$faqItem = $('.faq__header');
+      // universal.$faqItem = $('.faq__header');
+
+      universal.$searchBtn = $("#search-btn");
+      universal.$searchForm = $("#search");
    };
 
    universal.bindEvents = function(){
       universal.$burger.on('click', universal.toggleActiveNav);
 
-      universal.$down.on('click', universal.slideDown);
+      universal.$searchBtn.on('click', universal.toggleSearch);
 
-      universal.$faqItem.on('click', universal.toggleFaq);
+
+      // universal.$down.on('click', universal.slideDown);
+      // universal.$faqItem.on('click', universal.toggleFaq);
    };
 
    universal.toggleActiveNav = function(){
@@ -49,51 +53,55 @@
       universal.$navbar.toggleClass('navbar--active');
    }
 
-   universal.slideDown = function(){
-      $('html, body').animate({
-         scrollTop: $('#main').offset().top
-      }, 500, "swing");
-   }
+   // universal.slideDown = function(){
+   //    $('html, body').animate({
+   //       scrollTop: $('#main').offset().top
+   //    }, 500, "swing");
+   // }
 
-   universal.toggleFaq = function(){
-      $(this).next().slideToggle();
+   // universal.toggleFaq = function(){
+   //    $(this).next().slideToggle();
+   // }
+
+   universal.toggleSearch = function(){
+      universal.$searchForm.toggleClass('search--active')
    }
 
 
    window.shop = {};
 
-   shop.init = function(){
-      shop.cacheSelector();
-      var price = 0;
-
-      var self = this;
-      $.get("https://api.fixer.io/latest?base=PLN&symbols=GBP,EUR", function(response){
-         self.rates = response.rates;
-         var $price = $('.woocommerce-Price-amount').html();
-         var index = $price.indexOf('<');
-         price = parseFloat($price.slice(0, index));
-         if(self.rates){
-            $('#approximate-price-GBP').html((price * shop.rates['GBP']).toFixed(2) + "<sup>GBP</sup>");
-            $('#approximate-price-EUR').html((price * shop.rates['EUR']).toFixed(2) + "<sup>EUR</sup>");
-         }
-      });
-
-      $('#pa_quantity').children().eq(0).remove();
-
-      shop.$variation.on( "show_variation", function(){
-         var $price = $('.woocommerce-Price-amount').html();
-         var index = $price.indexOf('<');
-         price = parseFloat($price.slice(0, index));
-         if(shop.rates){
-            $('#approximate-price-GBP').html((price * shop.rates['GBP']).toFixed(2) + "<sup>GBP</sup>");
-            $('#approximate-price-EUR').html((price * shop.rates['EUR']).toFixed(2) + "<sup>EUR</sup>");
-         }
-      });
-   }
-
-   shop.cacheSelector = function(){
-      shop.$variation = $( ".variations_form.cart" );
-   };
+   // shop.init = function(){
+   //    shop.cacheSelector();
+   //    var price = 0;
+   //
+   //    var self = this;
+   //    $.get("https://api.fixer.io/latest?base=PLN&symbols=GBP,EUR", function(response){
+   //       self.rates = response.rates;
+   //       var $price = $('.woocommerce-Price-amount').html();
+   //       var index = $price.indexOf('<');
+   //       price = parseFloat($price.slice(0, index));
+   //       if(self.rates){
+   //          $('#approximate-price-GBP').html((price * shop.rates['GBP']).toFixed(2) + "<sup>GBP</sup>");
+   //          $('#approximate-price-EUR').html((price * shop.rates['EUR']).toFixed(2) + "<sup>EUR</sup>");
+   //       }
+   //    });
+   //
+   //    $('#pa_quantity').children().eq(0).remove();
+   //
+   //    shop.$variation.on( "show_variation", function(){
+   //       var $price = $('.woocommerce-Price-amount').html();
+   //       var index = $price.indexOf('<');
+   //       price = parseFloat($price.slice(0, index));
+   //       if(shop.rates){
+   //          $('#approximate-price-GBP').html((price * shop.rates['GBP']).toFixed(2) + "<sup>GBP</sup>");
+   //          $('#approximate-price-EUR').html((price * shop.rates['EUR']).toFixed(2) + "<sup>EUR</sup>");
+   //       }
+   //    });
+   // }
+   //
+   // shop.cacheSelector = function(){
+   //    shop.$variation = $( ".variations_form.cart" );
+   // };
 
    $(document).ready(universal.init);
 })(window, document, jQuery);

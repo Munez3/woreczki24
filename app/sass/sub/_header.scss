@@ -155,18 +155,41 @@
 }
 
 .search{
-   flex: 0 1 750px;
-   display: none;
+   position: absolute;
+   top: 70px;
+   left: 0;
+   right: 0;
+   padding: 10px;
+   opacity: 0;
+   background-color: #fff;
+   transform: translateY(-50%);
+   transition: 300ms;
+   z-index: -1;
+
+   &--active{
+      transform: translateY(0);
+      opacity: 1;
+   }
+
    @include media($breakpointLg){
+      position: static;
+      padding: 0;
+      flex: 0 1 750px;
       display: block;
+      transform: translateY(0);
+      opacity: 1;
+      z-index: auto;
    }
 
    &__input{
       padding: 15px 20px;
-      padding-right: 50px;
       width: 100%;
-      background: url('../img/ico_szukaj.svg') right 20px center /auto 60% no-repeat;
       box-sizing: border-box;
+
+      @include media($breakpointLg){
+         padding-right: 50px;
+         background: url('../img/ico_szukaj.svg') right 20px center /auto 60% no-repeat;
+      }
    }
 }
 
@@ -204,27 +227,32 @@
 
 
 .navbar{
-   top: 0;
+   position: absolute;
+   top: 70px;
    left: 0;
    width: 100%;
    background-color: #fff;
    border-bottom: 1px solid $grayLight;
-   // backdrop-filter: blur(10px);
-   display: none;
    opacity: 0;
    z-index: 9999;
    box-sizing: border-box;
+   transform: translateX(-100%);
+   transition: 400ms;
 
    &--active{
       display: flex;
       opacity: 1;
+      transform: translateX(0);
    }
 
    @include media($breakpointLg){
+      position: static;
       padding: 15px 0;
       display: flex;
       opacity: 1;
       height: auto;
+      transform: translateX(0);
+      transition: 0;
    }
 }
 
