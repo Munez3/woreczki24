@@ -1,4 +1,11 @@
 .shop-item {
+  &__content {
+    margin-bottom: 50px;
+    @include media($breakpointLg) {
+      margin-bottom: 0;
+    }
+  }
+
   &__img {
     justify-self: end;
   }
@@ -36,7 +43,6 @@
   }
 
   &__price-add {
-    
   }
 
   &__items-number {
@@ -61,7 +67,5 @@
   }
 
   &__profit-item {
-    margin-left: 70px;
-    margin-right: 70px;
   }
 }

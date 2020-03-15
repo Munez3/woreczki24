@@ -647,6 +647,10 @@ address {
   color: #fff;
 }
 
+.text-bold {
+  font-weight: 800;
+}
+
 .pointer {
   cursor: pointer;
 }
@@ -802,7 +806,40 @@ address {
 }
 
 .mgl-60 {
-  margin-left: 60px;
+  margin-left: 10px;
+}
+@media screen and (min-width: 992px) {
+  .mgl-60 {
+    margin-left: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mgl-60 {
+    margin-left: 60px;
+  }
+}
+
+.mglr-70 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media screen and (min-width: 992px) {
+  .mglr-70 {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mglr-70 {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .mglr-70 {
+    margin-left: 70px;
+    margin-right: 70px;
+  }
 }
 
 .pdtb-70 {
@@ -907,10 +944,6 @@ address {
   padding: 3px;
   content: '';
   transform: rotate(-45deg);
-}
-
-.text-bold {
-  font-weight: 800;
 }
 
 .header {
@@ -1508,6 +1541,14 @@ address {
   color: #F65F5A;
 }
 
+.shop-item__content {
+  margin-bottom: 50px;
+}
+@media screen and (min-width: 1200px) {
+  .shop-item__content {
+    margin-bottom: 0;
+  }
+}
 .shop-item__img {
   justify-self: end;
 }
@@ -1553,10 +1594,6 @@ address {
   width: 44px;
   height: 36px;
   margin-right: 20px;
-}
-.shop-item__profit-item {
-  margin-left: 70px;
-  margin-right: 70px;
 }
 
 div#__bs_notify__ {
