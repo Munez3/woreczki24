@@ -1,0 +1,80 @@
+.slick{
+   &-slider, &-list, &-track{
+      height: 100%;
+   }
+}
+
+#slider-pager{
+   display: none;
+   @include media($breakpointMd){
+      display: block;
+   }
+}
+
+.slider{
+   position: relative;
+   height: 300px;
+   box-sizing: border-box;
+   @include media($breakpointXl){
+      height: 500px;
+   }
+
+   &__item{
+      position: relative;
+      height: 100%;
+      background: center /cover no-repeat;
+      flex-direction: column-reverse;
+      @include media($breakpointMd){
+         flex-direction: row;
+      }
+   }
+
+   &__100{
+      height: 100%;
+   }
+
+   &__title{
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: 9px;
+      text-transform: uppercase;
+      @include media($breakpointMd){
+         font-size: 4.5rem;
+      }
+      @include media($breakpointXl){
+         font-size: 6rem;
+      }
+   }
+
+   &__line{
+      margin: 10px 0 6px;
+      width: 80%;
+      max-width: 100px;
+      height: 4px;
+      background-color: $grayText;
+      box-sizing: border-box;
+   }
+
+   &__btn{
+      margin: 6px 0;
+      padding-left: 40px;
+      padding-right: 40px;
+   }
+
+   &__pagination{
+      position: absolute;
+      right: 80px;
+      top: 50%;
+   }
+   &__pagination-item{
+      margin: 6px 0;
+      width: 10px;
+      height: 10px;
+      background-color: #000;
+      opacity: 0.3;
+
+      .slick-active &{
+         opacity: 1
+      }
+   }
+}

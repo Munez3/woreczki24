@@ -1,0 +1,50 @@
+.shop-item {
+  &__content {
+    grid-template-areas: "photo description description description";
+    grid-gap: 10px;
+  }
+
+  &__img {
+    justify-self: end;
+    grid-area: photo;
+    max-width: 366px;
+  }
+  &__description {
+    grid-area: description;
+  }
+
+  &__title {
+    color: #333a41;
+    font-weight: 700;
+    border-bottom: 1px solid #d6d7d9;
+    padding-bottom: 30px;
+  }
+
+  &__info {
+    margin-top: 20px;
+    font-size: 1.6rem;
+    div {
+      padding: 5px 0;
+    }
+    span {
+      font-weight: 800;
+    }
+
+    border-bottom: 1px solid #d6d7d9;
+    padding-bottom: 30px;
+  }
+
+  &__price {
+    margin-top: 20px;
+    select {
+      margin: 0 30px;
+    }
+  }
+
+  &__not-available {
+    margin-top: 20px;
+      a {
+          margin-right: 20px;
+      }
+  }
+}
