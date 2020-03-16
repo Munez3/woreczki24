@@ -78,7 +78,7 @@
       @include media($breakpointXl){
          margin-top: 70px;
       }
-   }  
+   }
 }
 
 .mgb{
@@ -134,7 +134,7 @@
       @include media($breakpointLg){
          margin-left: 60px;
       }
-     
+
    }
 }
 
@@ -226,7 +226,7 @@
       min-width: 150px;
    }
 
-   @include media($breakpointMd){
+   @include media($breakpointXXl){
       font-size: 1.6rem;
    }
 }

@@ -86,6 +86,7 @@
   &--baseline{align-items: baseline;}
   &--sbet{justify-content: space-between;}
   &--fstart{justify-content: flex-start;}
+  &--astart{align-items: flex-start;}
   &--fend{justify-content: flex-end;}
   &--nowrap{flex-wrap: nowrap;}
   &--aselfstart{align-self: start;}
@@ -175,7 +176,7 @@
     @include media($breakpointMd){
       grid-template-columns: repeat(2, 1fr);
     }
-  }  
+  }
 
    &--col-3{
       @include media($breakpointXs){

@@ -84,7 +84,16 @@
    }
 
    &__product-img{
-      width: 100%;
+      margin: 20px 0;
+      height: 180px;
+      width: auto;
+
+      @include media($breakpointMd){
+         width: 100%;
+         height: auto;
+         max-height: 230px;
+         object-fit: contain;
+      }
    }
 
    &__price{
@@ -99,14 +108,23 @@
 
    &__product-name{
       font-size: 1.4rem;
-      font-weight: 700;
+      font-weight: 600;
    }
 }
 
 .shop-sidebar {
-   flex: 1;
+   flex: 0 1 250px;
+   @include media($breakpointMd){
+      flex-basis: 250px;
+   }
+   @include media($breakpointMd){
+      flex-basis: 300px;
+   }
+   @include media($breakpointXXl){
+      flex-basis: 366px;
+   }
 }
 
 .shop-list {
-   flex: 6;
+   flex: 1;
 }
