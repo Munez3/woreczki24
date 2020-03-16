@@ -1,3 +1,9 @@
 node_modules/
 .sass-cache
 .package-lock.json
+remote/*
+!/remote/wp-content/
+/remote/wp-content/*
+!/remote/wp-content/themes/
+/remote/wp-content/themes/*
+!/remote/wp-content/themes/woreczki
