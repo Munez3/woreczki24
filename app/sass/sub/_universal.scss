@@ -66,6 +66,10 @@
 }
 
 .mgt{
+   &-20 {
+      margin-top: 20px;
+   }
+
    &-70{
       margin-top: 30px;
       @include media($breakpointMd){
@@ -74,7 +78,7 @@
       @include media($breakpointXl){
          margin-top: 70px;
       }
-   }
+   }  
 }
 
 .mgb{
@@ -113,6 +117,9 @@
 }
 
 .mgr {
+   &-10 {
+      margin-right: 10px;
+   }
    &-20{
       margin-right: 20px;
    }

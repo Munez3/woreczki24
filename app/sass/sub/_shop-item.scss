@@ -4,6 +4,10 @@
     @include media($breakpointLg) {
       margin-bottom: 0;
     }
+
+    &--border {
+      border-bottom: 1px solid #d6d7d9;
+    }
   }
 
   &__img {
@@ -15,6 +19,20 @@
     font-weight: 700;
     border-bottom: 1px solid #d6d7d9;
     padding-bottom: 30px;
+
+    &--small {
+      font-size: 1.4rem;
+    }
+
+    &--no-border {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+  }
+
+  &__about {
+    font-weight: 600;
   }
 
   &__info {

@@ -88,6 +88,11 @@
   &--fstart{justify-content: flex-start;}
   &--fend{justify-content: flex-end;}
   &--nowrap{flex-wrap: nowrap;}
+  &--aselfstart{align-self: start;}
+
+  &--flex-1 {flex: 1;}
+  &--flex-4 {flex: 4;}
+  &--flex-6 {flex: 6;}
 }
 
 .stretchbox{
@@ -191,6 +196,20 @@
          grid-template-columns: repeat(4, 1fr);
       }
    }
+
+   &--col-5{
+    @include media($breakpointSm){
+       grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media($breakpointLg){
+       grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media($breakpointXl){
+       grid-template-columns: repeat(5, 1fr);
+    }
+ }
 
    &--col-6{
       @include media($breakpointSm){
