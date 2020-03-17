@@ -11,7 +11,13 @@
   }
 
   &__img {
-    justify-self: end;
+    //flex: 1;
+    text-align: center;
+    max-width: 400px;
+  }
+
+  &__description {
+    //flex: 2;
   }
 
   &__title {
@@ -28,7 +34,6 @@
       border-bottom: none;
       padding-bottom: 0;
     }
-
   }
 
   &__about {
@@ -69,7 +74,6 @@
   }
 
   &__not-available {
-    margin-top: 20px;
   }
 
   &__profit {
@@ -78,12 +82,58 @@
     padding: 35px 0;
   }
 
-  &__profit-image {
+  &__profit-icon {
     width: 44px;
     height: 36px;
     margin-right: 20px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
   }
 
   &__profit-item {
+  }
+
+  &__details {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    @include media($breakpointMd) {
+      flex-direction: row;
+      
+    }
+  }
+
+  &__details-col {
+    flex: 1;
+  }
+
+  &__details-list {
+  }
+
+  &__details-list-item {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    &::before {
+      width: 4px;
+      height: 4px;
+      content: "";
+      background-color: #f65f5a;
+      display: inline-flex;
+      border-radius: 100%;
+      margin-right: 5px;
+    }
+  }
+
+  &__details-title {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+  &__details-desc {
+    font-size: 1.4rem;
+    font-weight: 600;
   }
 }

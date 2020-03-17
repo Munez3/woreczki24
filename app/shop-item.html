@@ -73,7 +73,7 @@
    </header>
 
    <div class="page-header">
-      <h1 class="page-header__title">Produkty</h1>
+      <div class="page-header__title">Produkty</div>
    </div>
 
    <div class="breadcrumb container mgtb-30">
@@ -96,48 +96,172 @@
 
    <main>
       <div class="shop-item container">
-         <section class="shop-item__content flexbox mgt-70">
+         <div class="shop-item__content flexbox mgt-70">
             <div class="shop-item__img">
-               <img src="./img/product.png" alt="Produkt" class="shop__product-img">
+               <img src="./img/product2.png" alt="Produkt" class="shop__product-img">
             </div>
-            <div class="shop-item__description mt-20">
-               <h4 class="shop-item__title">Torebka doypack PREMIUM SILVER, 100 ml, 85x50x145 mm, PET12/ALU8/PE75 + easy
-                  open</h4>
+            <div class="shop-item__description">
+               <h1 class="shop-item__title text-f20">Torebka doypack PREMIUM SILVER, 100 ml, 85x50x145 mm,
+                  PET12/ALU8/PE75 + easy
+                  open</h1>
                <div class="shop-item__info">
                   <div class="shop-item__availability pdtb-5">Dostępność: <span class="text-bold">w magazynie</span>
                   </div>
                   <div class="shop-item__shipping-cost pdtb-5">Kosz wysyłki: <span class="text-bold">od 9zł</span>
                   </div>
-                  <div class="shop-item__inventory pdtb-5 flexbox flexbox--nowrap flexbox--fstart">Stan magazynowy: <span class="shop-item__inventory-available flexbox"></span> <span class="text-bold"> 20
+                  <div class="shop-item__inventory pdtb-5 flexbox flexbox--nowrap flexbox--fstart">Stan magazynowy:
+                     <span class="shop-item__inventory-available flexbox"></span> <span class="text-bold"> 20
                         kpl/100szt.</span></div>
                </div>
-               <div class="shop-item__price flexbox flexbox--fstart">
-                  <div class="shop__price shop__price--big">27 zł</div>
+               <div class="shop-item__price flexbox mgtb-30 flexbox--fstart flexbox--astart">
+                  <div class="shop__price flexbox flexbox--col flexbox--astart">
+                     <div class="shop__price--big">27 zł <span class="text-f16">brutto</span></div>
+                     <div class="shop__price--medium shop__price--dark">22 zł <span class="text-f12">netto</span></div>
+                  </div>
                   <select class="shop-item__items-number">
                      <option>100 szt</option>
                   </select>
                   <a href="" class="btn btn--min-w150 shop-item__price-add">Do koszyka</a>
+
+                  <div class="shop-item__not-available flexbox">
+                     <a href="" class="btn btn--gray mgr-20 mgl-60 btn--min-w150">Brak</a>
+                     <a href="" class="btn">Powiadom o dostępności</a>
+                  </div>
                </div>
-               <div class="shop-item__not-available flexbox">
-                  <a href="" class="btn btn--gray mgr-20 mgl-60 btn--min-w150">Brak</a>
-                  <a href="" class="btn">Powiadom o dostępności</a>
-               </div>
+
             </div>
-         </section>
-         <section class="shop-item__profit flexbox">
+         </div>
+
+         <div class="shop-item__profit flexbox">
             <div class="shop-item__profit-item mglr-70 flexbox flexbox--nowrap">
-               <img class="shop-item__profit-image" src="./img/ico_szybka-przesylka.svg" />
-               <h4 class="text-bold">Szybka przesyłka</h4>
-            </div>
-            <div class="shop-item__profit-item mglr-70 flexbox flexbox--nowrap">
-               <img class="shop-item__profit-image" src="./img/ico_szybka-przesylka.svg" />
-               <h4 class="text-bold">Bezpieczne transakcje</h4>
+               <span class="shop-item__profit-icon"
+                  style="background-image: url('./img/ico_szybka-przesylka.svg');"></span>
+               <div class="text-bold text-f20">Szybka przesyłka</div>
             </div>
             <div class="shop-item__profit-item mglr-70 flexbox flexbox--nowrap">
-               <img class="shop-item__profit-image" src="./img/ico_wysoka-jakosc.svg" />
-               <h4 class="text-bold">Wysoka jakość</h4>
+               <span class="shop-item__profit-icon"
+                  style="background-image: url('./img/ico_szybka-przesylka.svg');"></span>
+               <div class="text-bold text-f20">Bezpieczne transakcje</div>
+            </div>
+            <div class="shop-item__profit-item mglr-70 flexbox flexbox--nowrap">
+               <span class="shop-item__profit-icon"
+                  style="background-image: url('./img/ico_wysoka-jakosc.svg');"></span>
+               <div class="text-bold text-f20">Wysoka jakość</div>
+            </div>
+         </div>
+
+         <div class="shop-item__details flexbox flexbox--fstart flexbox--astart mgtb-60">
+            <div class="shop-item__details-col">
+               <div class="shop-item__details-title mgt-20">Zalety woreczka:</div>
+               <ol class="shop-item__details-list">
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">wielokrotne zamykanie/otwieranie</li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">ochrona przed czynnikami zewnętrznymi</li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">chroni przed zawilgoceniem produktu </li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">najlepsza prezentacja na półce sklepowej </li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">zapobiega rozsypywaniu/rozlewaniu się produktu </li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">duża powierzchnia zadruku</li>
+               </ol>
+
+               <div class="shop-item__details-title mgt-40">Szczegóły opakowania:</div>
+               <ol class="shop-item__details-list">
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Rozmar: <span class="text-bold"> 160x80x260mm</span></li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Pojemność: <span class="text-bold"> 750 ml</span></li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Materiał: <span class="text-bold"> PET/PE</span> </li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Grubość: <span class="text-bold"> 12/100um</span> </li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Kolor: <span class="text-bold"> kolorowy</span> </li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Wysposażenie: <span class="text-bold"> laserowa linia, nacinka „easy-open”, okno, struna, zabezpieczający, niewidoczny znak UV, zaokrąglone narożniki</span></li>
+               </ol>
             </div>
 
+            <div class="shop-item__details-col">
+               <div class="shop-item__details-title mgtb-20">Opis produktu:</div>
+               <div class="shop-item__details-desc">
+                  <p>Stojące opakowanie foliowe z oknem, wykonane z bezbarwnej folii barierowej zadrukowanej zadrukowanej w
+                  stylistyce papieru, pokrytej lakierem matowym. Struna umożliwia wielokrotne otwieranie i zamykanie
+                  worka. Nacinka służy do łatwego otwierania. Dodatkowo worek posiada zaokrąglone narożniki. </p>
+                  
+                  <p>Worek pokryty jest lakierem "paper touch", który sprawia, że opakowanie foliowe w dotyku przypomina fakturę
+                  papieru. </p>
+                  
+                  <p>Worek wyposażony jest w innowacyjne rozwiązania dostępne tylko i wyłącznie u nas - laserową
+                  linię służącą do otwierania worka po prostej linii oraz niewidoczny znak UV w dnie, zabezpieczający
+                  przed próbami fałszowania produktu. </p>
+                  
+                  <p>Specyfikację produktu znajdą Państwo w zakładce "Szczegóły Produktu".</p>
+               </div>
+            </div>
+         </div>
+
+         <section class="shop__category-row mgtb-80 row grid grid--col-6 grid--gap-15">
+            <a href="" class="shop__category-cta">zobacz wszystkie</a>
+            <a href="" class="shop__category-btn grid__item flexbox text-center">
+               <h1 class="shop__category-header">Podobne produkty</h1>
+            </a>
+            <div class="grid__item shop__item text-center flexbox flexbox--col flexbox--sbet">
+               <div>
+                  <img src="./img/product2.png" alt="Produkt" class="shop__product-img">
+                  <div class="shop__price">27zł / 100 szt.</div>
+               </div>
+               <h2 class="shop__product-name mgtb-20">
+                  Torebka doypack PREMIUM SILVER100 ml 85x50x145 mm PET12/ALU8/PE75 + easy open
+               </h2>
+               <div class="mgt-10">
+                  <a href="" class="btn btn--gray">Zobacz</a>
+                  <a href="" class="btn">Do koszyka</a>
+               </div>
+            </div>
+            <div class="grid__item shop__item text-center flexbox flexbox--col flexbox--sbet">
+               <div>
+                  <img src="./img/product2.png" alt="Produkt" class="shop__product-img">
+                  <div class="shop__price">27zł / 100 szt.</div>
+               </div>
+               <h2 class="shop__product-name mgtb-20">
+                  Torebka doypack PREMIUM SILVER100 ml 85x50x145 mm PET12/ALU8/PE75 + easy open
+               </h2>
+               <div class="mgt-10">
+                  <a href="" class="btn btn--gray">Zobacz</a>
+                  <a href="" class="btn">Do koszyka</a>
+               </div>
+            </div>
+            <div class="grid__item shop__item text-center flexbox flexbox--col flexbox--sbet">
+               <div>
+                  <img src="./img/product2.png" alt="Produkt" class="shop__product-img">
+                  <div class="shop__price">27zł / 100 szt.</div>
+               </div>
+               <h2 class="shop__product-name mgtb-20">
+                  Torebka doypack PREMIUM SILVER100 ml 85x50x145 mm PET12/ALU8/PE75 + easy open
+               </h2>
+               <div class="mgt-10">
+                  <a href="" class="btn btn--gray">Zobacz</a>
+                  <a href="" class="btn">Do koszyka</a>
+               </div>
+            </div>
+            <div class="grid__item shop__item text-center flexbox flexbox--col flexbox--sbet">
+               <div>
+                  <img src="./img/product2.png" alt="Produkt" class="shop__product-img">
+                  <div class="shop__price">27zł / 100 szt.</div>
+               </div>
+               <h2 class="shop__product-name mgtb-20">
+                  Torebka doypack PREMIUM SILVER100 ml 85x50x145 mm PET12/ALU8/PE75 + easy open
+               </h2>
+               <div class="mgt-10">
+                  <a href="" class="btn btn--gray">Zobacz</a>
+                  <a href="" class="btn">Do koszyka</a>
+               </div>
+            </div>
+            <div class="grid__item shop__item text-center flexbox flexbox--col flexbox--sbet">
+               <div>
+                  <img src="./img/product2.png" alt="Produkt" class="shop__product-img">
+                  <div class="shop__price">27zł / 100 szt.</div>
+               </div>
+               <h2 class="shop__product-name mgtb-20">
+                  Torebka doypack PREMIUM SILVER100 ml 85x50x145 mm PET12/ALU8/PE75 + easy open
+               </h2>
+               <div class="mgt-10">
+                  <a href="" class="btn btn--gray">Zobacz</a>
+                  <a href="" class="btn">Do koszyka</a>
+               </div>
+            </div>
          </section>
       </div>
    </main>

@@ -690,6 +690,18 @@ address {
   font-weight: 800;
 }
 
+.text-f20 {
+  font-size: 2rem;
+}
+
+.text-f16 {
+  font-size: 1.6rem;
+}
+
+.text-f12 {
+  font-size: 1.2rem;
+}
+
 .pointer {
   cursor: pointer;
 }
@@ -783,6 +795,9 @@ address {
 
 .mgt-20 {
   margin-top: 20px;
+}
+.mgt-40 {
+  margin-top: 40px;
 }
 .mgt-70 {
   margin-top: 30px;
@@ -1295,6 +1310,7 @@ address {
   color: #333A41;
   font-weight: 800;
   letter-spacing: 4px;
+  font-size: 4rem;
 }
 
 .adventages__item {
@@ -1574,6 +1590,12 @@ address {
 .shop__price--big {
   font-size: 3.4rem;
 }
+.shop__price--medium {
+  font-size: 2.6rem;
+}
+.shop__price--dark {
+  color: #333A41;
+}
 .shop__product-name {
   font-size: 1.4rem;
   font-weight: 600;
@@ -1640,7 +1662,8 @@ address {
   border-bottom: 1px solid #d6d7d9;
 }
 .shop-item__img {
-  justify-self: end;
+  text-align: center;
+  max-width: 400px;
 }
 .shop-item__title {
   color: #333a41;
@@ -1682,18 +1705,58 @@ address {
   margin: 0 30px;
   padding: 10px 20px;
 }
-.shop-item__not-available {
-  margin-top: 20px;
-}
 .shop-item__profit {
   border-top: 1px solid #d6d7d9;
   border-bottom: 1px solid #d6d7d9;
   padding: 35px 0;
 }
-.shop-item__profit-image {
+.shop-item__profit-icon {
   width: 44px;
   height: 36px;
   margin-right: 20px;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+.shop-item__details {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+@media screen and (min-width: 992px) {
+  .shop-item__details {
+    -ms-flex-direction: row;
+        flex-direction: row;
+  }
+}
+.shop-item__details-col {
+  -ms-flex: 1;
+      flex: 1;
+}
+.shop-item__details-list-item {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.shop-item__details-list-item::before {
+  width: 4px;
+  height: 4px;
+  content: "";
+  background-color: #f65f5a;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-radius: 100%;
+  margin-right: 5px;
+}
+.shop-item__details-title {
+  font-size: 2rem;
+  font-weight: 800;
+}
+.shop-item__details-desc {
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 div#__bs_notify__ {
