@@ -69,17 +69,53 @@
     margin-top: 20px;
   }
 
+  &__price-box {
+    margin-top: -8px;
+  }
+
+  
   &__price-add {
+    margin-top: 10px;
+    @include media($breakpointXXs) {
+      margin-top: 0
+    }
   }
 
   &__items-number {
-    margin: 0 30px;
-    padding: 10px 20px;
+    margin: 0 15px;
+    padding: 8px 20px;
+    max-height: 33px;
+    box-sizing: border-box;
+
+    @include media($breakpointSm) {
+      margin: 0 30px;
+    }
   }
 
   &__not-available {
     &--hide {
       display: none;
+    }
+    margin-top: 10px;
+    justify-content: flex-start;
+    @include media($breakpointXXs) {
+      margin-top: 0;
+      justify-content: center;
+    }
+  }
+
+  &__not-available-arrow {
+    display: none;
+
+    @include media($breakpointSm) {
+      display: block;
+    }
+  }
+
+  &__not-available-notify {
+    margin-top: 10px;
+    @include media($breakpointXXs) {
+      margin-top: 0
     }
   }
 
@@ -87,6 +123,10 @@
     border-top: 1px solid #d6d7d9;
     border-bottom: 1px solid #d6d7d9;
     padding: 35px 0;
+    justify-content: flex-start;
+    @include media($breakpointXXs) {
+      justify-content: center;
+    }
   }
 
   &__profit-icon {
@@ -98,6 +138,10 @@
   }
 
   &__profit-item {
+    margin-top: 10px;
+    @include media($breakpointXXs) {
+      margin-top: 0px;
+    }
   }
 
   &__details {

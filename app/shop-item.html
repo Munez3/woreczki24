@@ -113,20 +113,24 @@
                      <span class="shop-item__inventory-available flexbox"></span> <span class="text-bold"> 20
                         kpl/100szt.</span></div>
                </div>
-               <div class="shop-item__price flexbox mgtb-30 flexbox--fstart flexbox--astart">
-                  <div class="shop__price flexbox flexbox--col flexbox--astart">
-                     <div class="shop__price--big">27 zł <span class="text-f16">brutto</span></div>
-                     <div class="shop__price--medium shop__price--dark">22 zł <span class="text-f12">netto</span></div>
+               <div class="shop-item__price flexbox mgt-20 mgb-30 flexbox--fstart flexbox--astart">
+                  <div class="flexbox flexbox--astart mgt-10 ">
+                     <div class="shop__price shop-item__price-box">
+                        <div class="shop__price--big">27 zł <span class="text-f16">brutto</span></div>
+                        <div class="shop__price--medium shop__price--dark">22 zł <span class="text-f12">netto</span>
+                        </div>
+                     </div>
+                     <select class="shop-item__items-number">
+                        <option>100 szt</option>
+                     </select>
+                     <a href="" class="btn btn--min-w150 shop-item__price-add">Do koszyka</a>
                   </div>
-                  <select class="shop-item__items-number">
-                     <option>100 szt</option>
-                  </select>
-                  <a href="" class="btn btn--min-w150 shop-item__price-add">Do koszyka</a>
-
-                  <div class="shop-item__not-available flexbox">
-                     <span class="arrow--right mglr-30"></span>
-                     <a href="" class="btn btn--gray mgr-20 btn--min-w150">Brak</a>
-                     <a href="" class="btn">Powiadom o dostępności</a>
+                  <div class="mgt-10">
+                     <div class="shop-item__not-available flexbox">
+                        <span class="shop-item__not-available-arrow arrow--right mglr-15"></span>
+                        <a href="" class="btn btn--gray mgr-20 btn--min-w150">Brak</a>
+                        <a href="" class="btn shop-item__not-available-notify">Powiadom o dostępności</a>
+                     </div>
                   </div>
                </div>
 
@@ -153,41 +157,54 @@
 
          <div class="shop-item__details flexbox flexbox--fstart flexbox--astart mgtb-60">
             <div class="shop-item__details-col">
-               <div class="shop-item__details-title mgt-20">Zalety woreczka:</div>
+               <h2 class="shop-item__details-title mgt-20">Zalety woreczka:</h2>
                <ol class="shop-item__details-list">
                   <li class="shop-item__details-list-item flexbox flexbox--fstart">wielokrotne zamykanie/otwieranie</li>
-                  <li class="shop-item__details-list-item flexbox flexbox--fstart">ochrona przed czynnikami zewnętrznymi</li>
-                  <li class="shop-item__details-list-item flexbox flexbox--fstart">chroni przed zawilgoceniem produktu </li>
-                  <li class="shop-item__details-list-item flexbox flexbox--fstart">najlepsza prezentacja na półce sklepowej </li>
-                  <li class="shop-item__details-list-item flexbox flexbox--fstart">zapobiega rozsypywaniu/rozlewaniu się produktu </li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">ochrona przed czynnikami zewnętrznymi
+                  </li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">chroni przed zawilgoceniem produktu
+                  </li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">najlepsza prezentacja na półce
+                     sklepowej </li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">zapobiega rozsypywaniu/rozlewaniu się
+                     produktu </li>
                   <li class="shop-item__details-list-item flexbox flexbox--fstart">duża powierzchnia zadruku</li>
                </ol>
 
-               <div class="shop-item__details-title mgt-40">Szczegóły opakowania:</div>
+               <h2 class="shop-item__details-title mgt-40">Szczegóły opakowania:</h2>
                <ol class="shop-item__details-list">
-                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Rozmar: <span class="text-bold"> 160x80x260mm</span></li>
-                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Pojemność: <span class="text-bold"> 750 ml</span></li>
-                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Materiał: <span class="text-bold"> PET/PE</span> </li>
-                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Grubość: <span class="text-bold"> 12/100um</span> </li>
-                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Kolor: <span class="text-bold"> kolorowy</span> </li>
-                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Wysposażenie: <span class="text-bold"> laserowa linia, nacinka „easy-open”, okno, struna, zabezpieczający, niewidoczny znak UV, zaokrąglone narożniki</span></li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Rozmar: <span class="text-bold">
+                        160x80x260mm</span></li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Pojemność: <span class="text-bold">
+                        750 ml</span></li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Materiał: <span class="text-bold">
+                        PET/PE</span> </li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Grubość: <span class="text-bold">
+                        12/100um</span> </li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Kolor: <span class="text-bold">
+                        kolorowy</span> </li>
+                  <li class="shop-item__details-list-item flexbox flexbox--fstart">Wysposażenie: <span
+                        class="text-bold"> laserowa linia, nacinka „easy-open”, okno, struna, zabezpieczający,
+                        niewidoczny znak UV, zaokrąglone narożniki</span></li>
                </ol>
             </div>
 
             <div class="shop-item__details-col">
-               <div class="shop-item__details-title mgtb-20">Opis produktu:</div>
+               <h2 class="shop-item__details-title mgtb-20">Opis produktu:</h2>
                <div class="shop-item__details-desc">
-                  <p>Stojące opakowanie foliowe z oknem, wykonane z bezbarwnej folii barierowej zadrukowanej zadrukowanej w
-                  stylistyce papieru, pokrytej lakierem matowym. Struna umożliwia wielokrotne otwieranie i zamykanie
-                  worka. Nacinka służy do łatwego otwierania. Dodatkowo worek posiada zaokrąglone narożniki. </p>
-                  
-                  <p>Worek pokryty jest lakierem "paper touch", który sprawia, że opakowanie foliowe w dotyku przypomina fakturę
-                  papieru. </p>
-                  
+                  <p>Stojące opakowanie foliowe z oknem, wykonane z bezbarwnej folii barierowej zadrukowanej
+                     zadrukowanej w
+                     stylistyce papieru, pokrytej lakierem matowym. Struna umożliwia wielokrotne otwieranie i zamykanie
+                     worka. Nacinka służy do łatwego otwierania. Dodatkowo worek posiada zaokrąglone narożniki. </p>
+
+                  <p>Worek pokryty jest lakierem "paper touch", który sprawia, że opakowanie foliowe w dotyku przypomina
+                     fakturę
+                     papieru. </p>
+
                   <p>Worek wyposażony jest w innowacyjne rozwiązania dostępne tylko i wyłącznie u nas - laserową
-                  linię służącą do otwierania worka po prostej linii oraz niewidoczny znak UV w dnie, zabezpieczający
-                  przed próbami fałszowania produktu. </p>
-                  
+                     linię służącą do otwierania worka po prostej linii oraz niewidoczny znak UV w dnie, zabezpieczający
+                     przed próbami fałszowania produktu. </p>
+
                   <p>Specyfikację produktu znajdą Państwo w zakładce "Szczegóły Produktu".</p>
                </div>
             </div>
