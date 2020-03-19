@@ -1,4 +1,21 @@
+
+.shop-sidebar {
+   display: none;
+   flex: 0 1 250px;
+   // @include media($breakpointMd){
+   //    flex-basis: 250px;
+   // }
+   @include media($breakpointLg){
+      display: block;
+      flex-basis: 300px;
+   }
+   @include media($breakpointXXl){
+      flex-basis: 366px;
+   }
+}
+
 .shop{
+   flex: 1;
 
    &__category-row{
       position: relative;
@@ -119,21 +136,19 @@
       font-size: 1.4rem;
       font-weight: 600;
    }
-}
 
-.shop-sidebar {
-   flex: 0 1 250px;
    @include media($breakpointMd){
-      flex-basis: 250px;
+      &__item--row{
+         flex-direction: row;
+         border-bottom: 1px solid $grayLight;
+         text-align: left;
+         box-shadow: none;
+      }
+   
+      &__item--row &__product-img{
+         flex: 0 0 230px;
+         width: auto;
+      }
    }
-   @include media($breakpointMd){
-      flex-basis: 300px;
-   }
-   @include media($breakpointXXl){
-      flex-basis: 366px;
-   }
-}
 
-.shop-list {
-   flex: 1;
 }
