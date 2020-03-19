@@ -1021,15 +1021,6 @@ address {
 .breadcrumb__item:hover {
   cursor: pointer;
 }
-.breadcrumb__item:not(:last-child):after {
-  border: solid #333A4180;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  margin: 0 7px;
-  padding: 3px;
-  content: '';
-  transform: rotate(-45deg);
-}
 
 .arrow--right::after {
   border: solid #333A4180;
@@ -1846,11 +1837,7 @@ address {
         flex-direction: row;
   }
 }
-.shop-item__details-col {
-  -ms-flex: 1;
-      flex: 1;
-}
-.shop-item__details-list-item {
+.shop-item__details ul li {
   margin-top: 15px;
   margin-bottom: 15px;
   margin-left: 10px;
@@ -1858,7 +1845,7 @@ address {
   font-weight: 600;
   display: flow-root;
 }
-.shop-item__details-list-item::before {
+.shop-item__details ul li::before {
   width: 4px;
   height: 4px;
   content: "";
@@ -1869,6 +1856,10 @@ address {
   margin-right: 5px;
   position: relative;
   top: -3px;
+}
+.shop-item__details-col {
+  -ms-flex: 1;
+      flex: 1;
 }
 .shop-item__details-title {
   font-size: 2rem;

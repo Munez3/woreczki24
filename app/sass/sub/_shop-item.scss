@@ -1,6 +1,5 @@
 .shop-item {
   &__content {
-    
     @include media($breakpointLg) {
       margin-bottom: 0;
     }
@@ -11,7 +10,6 @@
   }
 
   &__img {
-    
     text-align: center;
     @include media($breakpointLg) {
       flex: 1;
@@ -73,11 +71,10 @@
     margin-top: -8px;
   }
 
-  
   &__price-add {
     margin-top: 10px;
     @include media($breakpointXXs) {
-      margin-top: 0
+      margin-top: 0;
     }
   }
 
@@ -115,7 +112,7 @@
   &__not-available-notify {
     margin-top: 10px;
     @include media($breakpointXXs) {
-      margin-top: 0
+      margin-top: 0;
     }
   }
 
@@ -149,36 +146,33 @@
     flex-direction: column;
     @include media($breakpointMd) {
       flex-direction: row;
-      
+    }
+    ul {
+      li {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: 10px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        display: flow-root;
+
+        &::before {
+          width: 4px;
+          height: 4px;
+          content: "";
+          background-color: #f65f5a;
+          display: inline-flex;
+          border-radius: 100%;
+          margin-right: 5px;
+          position: relative;
+          top: -3px;
+        }
+      }
     }
   }
 
   &__details-col {
     flex: 1;
-  }
-
-  &__details-list {
-  }
-
-  &__details-list-item {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 10px;
-    font-size: 1.4rem;
-    font-weight: 600;
-    display: flow-root;
-
-    &::before {
-      width: 4px;
-      height: 4px;
-      content: "";
-      background-color: #f65f5a;
-      display: inline-flex;
-      border-radius: 100%;
-      margin-right: 5px;
-      position: relative;
-      top: -3px;
-    }
   }
 
   &__details-title {

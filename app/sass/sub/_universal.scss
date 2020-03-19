@@ -273,16 +273,6 @@
       &:hover{
          cursor: pointer;
       }
-
-      &:not(:last-child):after{
-         border: solid #333A4180;
-         border-width: 0 2px 2px 0;
-         display: inline-block;
-         margin: 0 7px;
-         padding: 3px;
-         content: '';
-         transform: rotate(-45deg);
-      }
    }
 }
 
