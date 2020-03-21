@@ -1,0 +1,41 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+ $breakpointXXs: 450px;
+ $breakpointXs: 600px;
+ $breakpointSm: 768px;
+ $breakpointMd: 992px;
+ $breakpointLg: 1200px;
+ $breakpointXl: 1500px;
+ $breakpointXXl: 2000px;
+
+   $main: #F65F5A;
+   $red: #F65F5A;
+   $grayLight: #D6D7D9;
+   $grayText: #333A41;
+   $gray: #999ca0;
+   $font: 'Open Sans', sans-serif;
+
+ @mixin media($width){
+    @media screen and (min-width: $width){
+       @content;
+    }
+ }
+
+  @import "compass/reset";
+  @import 'sub/reset';
+  @import 'sub/layout';
+  @import 'sub/universal';
+  @import 'sub/header';
+  @import 'sub/footer';
+  @import 'sub/slider';
+  @import 'sub/shop';
+  @import 'sub/about';
+  @import 'sub/shop-item';
+  // @import 'sub/page';
+  // @import 'sub/contact';
+  // @import 'sub/lightbox';
+
+
+  div#__bs_notify__{display: none !important;}

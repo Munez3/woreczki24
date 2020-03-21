@@ -7,3 +7,6 @@ remote/*
 !/remote/wp-content/themes/
 /remote/wp-content/themes/*
 !/remote/wp-content/themes/woreczki
+.ftpconfig
+
+.vscode

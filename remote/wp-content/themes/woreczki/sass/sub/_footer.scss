@@ -1,0 +1,93 @@
+.adventages{
+
+   &__item{
+      font-size: 1.4rem;
+   }
+
+   &__icon{
+      flex: 1 0 100px;
+      background: center /auto 55px no-repeat;
+      box-sizing: border-box;
+
+      @include media($breakpointXXl){
+         flex-basis: 130px;
+         background-size: auto 70px;
+      }
+   }
+}
+
+
+.footer{
+   padding: 10px 0;
+   background-color: #F4F5F5;
+   box-sizing: border-box;
+
+   @include media($breakpointXl){
+      padding: 90px 0;
+   }
+
+   &__col{
+      margin: 10px 0;
+      flex: 1 0 100%;
+
+      @include media($breakpointSm){
+         margin: 20px;
+         flex: auto;
+      }
+
+      @include media($breakpointXl){
+         margin: 0 20px;
+      }
+   }
+
+   &__header{
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+
+      &:not(:first-child){
+         margin-top: 20px;
+      }
+   }
+
+   &__nav{
+      color: $gray;
+
+      &-item{
+         margin: 10px 0;
+         font-weight: 600;
+
+         @include media($breakpointLg){
+            margin: 5px 0;
+         }
+      }
+   }
+
+   &__services-img{
+      margin-right: 20px;
+      height: 36px;
+      width: auto;
+
+      &--small{
+         height: 26px;
+      }
+   }
+
+   &__contact-item{
+      margin-bottom: 15px;
+      display: block;
+      font-size: 2rem;
+      font-weight: 600;
+      // white-space: nowrap;
+   }
+}
+
+.rights{
+   padding-top: 10px;
+   padding-bottom: 10px;
+   font-size: 1.2rem;
+}
+
+.author{
+   width: 80px;
+   height: auto;
+}

@@ -1,0 +1,19 @@
+.about{
+   margin-left: auto;
+   margin-right: auto;
+   padding: 15px;
+   box-sizing: border-box;
+
+   @include media($breakpointXl){
+      border: 1px solid $grayLight;
+   }
+   @include media($breakpointXXl){
+      padding: 30px;
+      max-width: 70%;
+   }
+
+
+   &__header{
+      color: $red;
+   }
+}

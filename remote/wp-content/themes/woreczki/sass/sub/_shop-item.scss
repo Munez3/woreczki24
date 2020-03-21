@@ -1,0 +1,217 @@
+.shop-item {
+  &__content {
+    @include media($breakpointLg) {
+      margin-bottom: 0;
+    }
+
+    &--border {
+      border-bottom: 1px solid #d6d7d9;
+    }
+  }
+
+  &__img {
+    text-align: center;
+    @include media($breakpointLg) {
+      flex: 1;
+    }
+  }
+
+  &__description {
+    @include media($breakpointLg) {
+      flex: 2;
+    }
+  }
+
+  &__title {
+    color: #333a41;
+    font-weight: 700;
+    border-bottom: 1px solid #d6d7d9;
+    padding-bottom: 30px;
+
+    &--small {
+      font-size: 1.4rem;
+    }
+
+    &--no-border {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  &__about {
+    font-weight: 600;
+  }
+
+  &__info {
+    margin-top: 20px;
+    font-size: 1.6rem;
+
+    border-bottom: 1px solid #d6d7d9;
+    padding-bottom: 30px;
+  }
+
+  &__inventory-available {
+    width: 20px;
+    height: 20px;
+    background-color: #4fd146;
+    border-radius: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+
+    &--red {
+      background-color: red;
+    }
+  }
+
+  // &__price {
+  //   flex-direction: column;
+  //   margin-top: 20px;
+
+  //   @include media($breakpointMd){
+  //     flex-direction: row;
+  //   }
+  // }
+
+  &__price-box {
+    flex-basis: 100%;
+    
+    @include media($breakpointXs){
+      flex-basis: auto;
+      margin-top: -8px;
+    }
+  }
+
+  &__price-add {
+    margin: 5px 0;
+    width: 100%;
+    @include media($breakpointXs) {
+      margin: 0;
+      width: auto;
+    }
+  }
+
+  &__items-number {
+    margin: 15px 0;
+    padding: 8px 20px;
+    max-height: 33px;
+    box-sizing: border-box;
+
+    @include media($breakpointXs) {
+      margin: 0 30px;
+    }
+  }
+
+  &__not-available {
+    margin-top: 20px;
+    width: 100%;
+
+    &--hide {
+      display: none;
+    }
+
+    @include media($breakpointXXl){
+      margin-top: 0;
+      width: auto;
+    }
+  }
+
+  &__not-available-arrow {
+    display: none;
+
+    @include media($breakpointXXl) {
+      display: block;
+    }
+  }
+
+  &__not-available-info {
+    margin-top: 10px;
+    padding: 7px 20px;
+    background-color: $gray;
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    
+    @include media($breakpointXs) {
+      margin-top: 0;
+      margin-right: 20px;
+    }
+  }
+
+  &__not-available-notify {
+    margin-top: 10px;
+    width: 100%;
+    @include media($breakpointXs) {
+      margin-top: 0;
+      width: auto;
+    }
+  }
+
+  &__profit {
+    border-top: 1px solid #d6d7d9;
+    border-bottom: 1px solid #d6d7d9;
+    padding: 35px 0;
+    justify-content: flex-start;
+    @include media($breakpointLg) {
+      justify-content: center;
+    }
+  }
+
+  &__profit-icon {
+    width: 44px;
+    height: 36px; 
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+  }
+
+  &__profit-item {
+    margin-top: 10px;
+    @include media($breakpointLg) {
+      margin-top: 0px;
+    }
+  }
+
+  &__details {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    @include media($breakpointMd) {
+      flex-direction: row;
+    }
+    ul {
+      li {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: 10px;
+        font-size: 1.4rem;
+        // font-weight: 600;
+        display: flow-root;
+
+        &::before {
+          width: 4px;
+          height: 4px;
+          content: "";
+          background-color: #f65f5a;
+          display: inline-flex;
+          border-radius: 100%;
+          margin-right: 5px;
+          position: relative;
+          top: -3px;
+        }
+      }
+    }
+  }
+
+  &__details-col {
+    flex: 1;
+
+    h2{
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,0 +1,154 @@
+
+.shop-sidebar {
+   display: none;
+   flex: 0 1 250px;
+   // @include media($breakpointMd){
+   //    flex-basis: 250px;
+   // }
+   @include media($breakpointLg){
+      display: block;
+      flex-basis: 300px;
+   }
+   @include media($breakpointXXl){
+      flex-basis: 366px;
+   }
+}
+
+.shop{
+   flex: 1;
+
+   &__category-row{
+      position: relative;
+      padding: 30px 0;
+      border-top: 1px solid $grayLight;
+      border-bottom: 1px solid $grayLight;
+   }
+
+   &__category-cta{
+      position: absolute;
+      right: 0;
+      top: -25px;
+      display: none;
+      color: $grayLight;
+      font-size: 1.4rem;
+
+      @include media($breakpointLg){
+         display: inline;
+      }
+   }
+
+   &__category-btn{
+      padding: 20px 0;
+      position: relative;
+      background-color: $red;
+      @include media($breakpointLg){
+         padding: 0;
+      }
+
+      &:before, &:after{
+         content: '';
+         position: absolute;
+         display: none;
+
+         @include media($breakpointLg){
+            display: inline-block;
+         }
+      }
+
+      &:before{
+         bottom: 20%;
+         left: 50%;
+         width: 40px;
+         height: 10px;
+         background-color: #fff;
+         border-radius: 3px;
+         transform: translateX(-50%);
+      }
+
+      &:after{
+         bottom: 20%;
+         width: 22px;
+         height: 22px;
+         border-right: 10px solid #fff;
+         border-bottom: 10px solid #fff;
+         border-radius: 4px;
+         transform: translate(20%, 35%) rotate(-45deg);
+      }
+   }
+
+   &__category-header{
+      color: #fff;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+
+      @include media($breakpointLg){
+         font-size: 3rem;
+      }
+      @include media($breakpointXXl){
+         font-size: 4rem;
+      }
+   }
+
+   &__item{
+      padding: 10px;
+      box-shadow: 0 0 3px rgba($grayLight, 0.6);
+      box-sizing: border-box;
+
+      @include media($breakpointLg){
+         padding: 0;
+         box-shadow: none;
+      }
+   }
+
+   &__product-img{
+      margin: 20px 0;
+      height: 180px;
+      width: auto;
+
+      @include media($breakpointMd){
+         width: 100%;
+         height: auto;
+         max-height: 230px;
+         object-fit: contain;
+      }
+   }
+
+   &__price{
+      color: $red;
+      font-weight: 700;
+      font-size: 2.2rem;
+
+      &--big{
+         font-size: 3.4rem;
+      }
+
+      &--medium {
+         font-size: 2.6rem;
+      }
+
+      &--dark {
+         color: $grayText;
+      }
+
+   }
+
+   &__product-name{
+      font-size: 1.4rem;
+      font-weight: 600;
+   }
+
+   @include media($breakpointMd){
+      &__item--row{
+         flex-direction: row;
+         border-bottom: 1px solid $grayLight;
+         text-align: left;
+         box-shadow: none;
+      }
+   
+      &__item--row &__product-img{
+         flex: 0 0 230px;
+         width: auto;
+      }
+   }
+
+}

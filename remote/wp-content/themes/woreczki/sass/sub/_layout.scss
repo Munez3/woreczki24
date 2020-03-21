@@ -1,0 +1,339 @@
+.container{
+  padding: 0 20px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  @include media($breakpointXl){
+     max-width: 90%;
+ }
+}
+
+.row{
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+.col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8,
+.col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9,
+.col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9{
+  box-sizing: border-box;
+}
+
+@include media($breakpointXs){
+  .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8{
+    float: left;
+  }
+  .col-xs-2{width: 1/6*100%;}
+  .col-xs-3{width: 25%;}
+  .col-xs-4{width: 33.3333%;}
+  .col-xs-5{width: 5/12*100%;}
+  .col-xs-6{width: 50%;}
+  .col-xs-7{width: 7/12*100%;}
+  .col-xs-8{width: 8/12*100%;}
+}
+
+
+@include media($breakpointSm){
+  .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9{
+    float: left;
+  }
+  .col-sm-2{width: 1/6*100%;}
+  .col-sm-3{width: 25%;}
+  .col-sm-4{width: 33.3333%;}
+  .col-sm-5{width: 5/12*100%;}
+  .col-sm-6{width: 50%;}
+  .col-sm-7{width: 7/12*100%;}
+  .col-sm-8{width: 66.6666%;}
+  .col-sm-9{width: 75%;}
+}
+
+@include media($breakpointMd){
+  .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9{
+    float: left;
+  }
+  .col-md-3{width: 25%;}
+  .col-md-4{width: 33.33%;}
+  .col-md-5{width: 5/12*100%;}
+  .col-md-6{width: 50%;}
+  .col-md-7{width: 7/12*100%;}
+  .col-md-8{width: 66.6666%;}
+  .col-md-9{width: 75%;}
+}
+@include media($breakpointLg){
+  .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9{
+    float: left;
+  }
+  .col-lg-3{width: 25%;}
+  .col-lg-4{width: 33.33%;}
+  .col-lg-5{width: 5/12*100%;}
+  .col-lg-6{width: 50%;}
+  .col-lg-7{width: 7/12*100%;}
+  .col-lg-8{width: 66.6666%;}
+  .col-lg-9{width: 75%;}
+}
+
+.flexbox{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &--zero{order: -1;}
+  &--nd{order: 2;}
+  &--col{flex-direction: column;}
+  &--baseline{align-items: baseline;}
+  &--sbet{justify-content: space-between;}
+  &--fstart{justify-content: flex-start;}
+  &--astart{align-items: flex-start;}
+  &--fend{justify-content: flex-end;}
+  &--nowrap{flex-wrap: nowrap;}
+  &--aselfstart{align-self: start;}
+
+  &--flex-1 {flex: 1;}
+  &--flex-2 {flex: 2;}
+  &--flex-4 {flex: 4;}
+  &--flex-6 {flex: 6;}
+
+  &--sm{
+    display: block;
+    @include media($breakpointSm){
+      display: flex;
+    }
+  }
+  &--lg{
+    display: block;
+    @include media($breakpointLg){
+      display: flex;
+    }
+  }
+
+  &--xxl{
+    display: block;
+    @include media($breakpointXXl){
+      display: flex;
+    }
+  }
+}
+
+.stretchbox{
+  @extend .flexbox;
+  align-items: stretch;
+}
+
+@include media($breakpointXs){
+  .flexbox-xs{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .stretchbox-xs{
+    @extend .flexbox-xs;
+    align-items: stretch;
+  }
+}
+
+@include media($breakpointSm){
+  .flexbox-sm{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .stretchbox-sm{
+    @extend .flexbox-sm;
+    align-items: stretch;
+  }
+}
+
+@include media($breakpointMd){
+  .flexbox-md{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .stretchbox-md{
+    @extend .flexbox-md;
+    align-items: stretch;
+  }
+}
+
+@include media($breakpointLg){
+  .flexbox-lg{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .stretchbox-lg{
+    @extend .flexbox-lg;
+    align-items: stretch;
+  }
+}
+
+.grid{
+   @supports(display: grid){
+      display: grid;
+      &:after{
+         display: none;
+      }
+   }
+
+  &--col-2{
+    @include media($breakpointXs){
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @include media($breakpointMd){
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+   &--col-3{
+      @include media($breakpointXs){
+         grid-template-columns: repeat(2, 1fr);
+      }
+      @include media($breakpointMd){
+         grid-template-columns: repeat(3, 1fr);
+      }
+   }
+
+
+   &--col-4{
+      @include media($breakpointSm){
+         grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include media($breakpointLg){
+         grid-template-columns: repeat(4, 1fr);
+      }
+   }
+
+   &--col-5{
+    @include media($breakpointSm){
+       grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media($breakpointLg){
+       grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media($breakpointXl){
+       grid-template-columns: repeat(5, 1fr);
+    }
+ }
+
+   &--col-6{
+      @include media($breakpointSm){
+         grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include media($breakpointLg){
+         grid-template-columns: repeat(4, 1fr);
+      }
+
+      @include media($breakpointXl){
+         grid-template-columns: repeat(6, 1fr);
+      }
+   }
+
+   &--gap-15{
+      grid-gap: 15px;
+   }
+   &--gap-30{
+      grid-gap: 30px;
+      // grid-gap: 15px;
+      // @include media($breakpointLg){
+      // }
+   }
+   &--gap-50{
+      grid-gap: 50px;
+      // grid-gap: 15px;
+      // @include media($breakpointLg){
+      // }
+   }
+
+   &--center{
+      place-items: center;
+   }
+
+   &__item{
+      @supports(display: grid){
+         float: none;
+         width: 100%;
+      }
+   }
+}
+
+.text-center{
+  text-align: center;
+}
+.text-justify{
+  text-align: justify;
+}
+.text-right{
+  text-align: right;
+}
+.uppercase{
+  text-transform: uppercase;
+}
+
+.text-xs-left{
+  text-align: center;
+  @include media($breakpointXs){
+    text-align: left;
+  }
+}
+.text-sm-left{
+  text-align: center;
+  @include media($breakpointSm){
+    text-align: left;
+  }
+}
+.text-md-left{
+  text-align: center;
+  @include media($breakpointMd){
+    text-align: left;
+  }
+}
+.text-md-right{
+  text-align: center;
+  @include media($breakpointMd){
+    text-align: right;
+  }
+}
+.text-lg-left{
+  text-align: center;
+  @include media($breakpointLg){
+    text-align: left;
+  }
+}
+
+.text-white{color: #fff;}
+
+.text-bold, strong {
+  font-weight: 700;
+}
+
+.text-f20 {
+  font-size: 2rem;
+}
+
+.text-f16 {
+  font-size: 1.6rem;
+}
+
+.text-f12 {
+  font-size: 1.2rem;
+}
+
+.pointer{
+   cursor: pointer;
+}
+
+.img{
+   max-width: 100%;
+}

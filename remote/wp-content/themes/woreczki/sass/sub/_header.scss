@@ -1,0 +1,304 @@
+.header{
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   background-color: #fff;
+   box-sizing: border-box;
+   z-index: 999;
+
+   &__contact{
+      padding: 5px 0;
+      background-color: $main;
+      color: #fff;
+      font-size: 1.2rem;
+      box-sizing: border-box;
+
+      @include media($breakpointLg){
+         font-size: 1.5rem;
+      }
+
+      &-item{
+         margin-right: 20px;
+         @include media($breakpointLg){
+            margin-right: 60px;
+         }
+      }
+   }
+
+   &__main{
+      padding: 10px 0;
+      border-bottom: 1px solid $grayLight;
+
+      @include media($breakpointLg){
+         padding: 20px 0;
+      }
+   }
+}
+
+.icon{
+   margin-right: 5px;
+   display: inline-block;
+   max-width: 20px;
+   width: 100%;
+   height: 16px;
+   background: center /contain no-repeat;
+   vertical-align: middle;
+
+   @include media($breakpointLg){
+      margin-right: 8px;
+      max-width: 30px;
+      width: 100%;
+      height: 17px;
+   }
+
+   &--big{
+      max-width: 30px;
+      height: 22px;
+      @include media($breakpointLg){
+         height: 34px;
+         max-width: 37px;
+      }
+   }
+
+   &--mail{
+      background-image: url('../img/ico_mail-bialy.svg')
+   }
+   &--mail-red{
+      background-image: url('../img/ico_mail.svg')
+   }
+   &--phone{
+      background-image: url('../img/ico_whatsapp.svg')
+   }
+   &--phone-green{
+      background-image: url('../img/ico_whatsapp-zielony.svg')
+   }
+
+   &--cart{
+      background-image: url('../img/ico_koszyk.svg')
+   }
+   &--user{
+      background-image: url('../img/ico_zaloguj-sie.svg')
+   }
+
+   &--search{
+      background-image: url('../img/ico_szukaj.svg');
+   }
+}
+
+.logo{
+   flex: 0 1 120px;
+   box-sizing: border-box;
+   @include media($breakpointLg){
+      flex: 0 1 20%;
+   }
+
+   &__header{
+      line-height: 0;
+   }
+
+   &__img{
+      width: 100%;
+      max-width: 270px;
+      height: auto;
+   }
+
+}
+
+.burger{
+   position: relative;
+   margin-left: 6px;
+   cursor: pointer;
+   z-index: 99999;
+
+   @include media($breakpointLg){
+      display: none;
+   }
+
+
+   &__bar{
+      position: relative;
+      width: 20px;
+      height: 1px;
+      background-color: $red;
+      transition: 1000ms;
+
+      &:before, &:after{
+         content: '';
+         position: absolute;
+         width: 100%;
+         height: 1px;
+         background-color: $red;
+         transition: 800ms;
+      }
+
+      &:before{
+         top: -6px;
+      }
+
+      &:after{
+         bottom: -6px;
+      }
+   }
+
+   &--active &__bar{
+      background-color: transparent;
+      transition: 500ms;
+
+      &:before{
+         transform: translateY(6px) rotate(-315deg);
+      }
+      &:after{
+         transform: translateY(-6px) rotate(315deg);
+      }
+   }
+}
+
+.search{
+   position: absolute;
+   top: 70px;
+   left: 0;
+   right: 0;
+   padding: 10px;
+   opacity: 0;
+   background-color: #fff;
+   transform: translateY(-50%);
+   transition: 300ms;
+   z-index: -1;
+
+   &--active{
+      transform: translateY(0);
+      opacity: 1;
+   }
+
+   @include media($breakpointLg){
+      position: static;
+      padding: 0;
+      flex: 0 1 750px;
+      display: block;
+      transform: translateY(0);
+      opacity: 1;
+      z-index: auto;
+   }
+
+   &__input{
+      padding: 15px 20px;
+      width: 100%;
+      box-sizing: border-box;
+
+      @include media($breakpointLg){
+         padding-right: 50px;
+         background: url('../img/ico_szukaj.svg') right 20px center /auto 60% no-repeat;
+      }
+   }
+}
+
+.account{
+   flex: 1 auto;
+   text-align: right;
+
+   @include media($breakpointLg){
+      flex: 0 1 20%;
+   }
+
+   &__item{
+      @include media($breakpointLg){
+         margin-left: 30px;
+      }
+
+      &--mobile{
+         @include media($breakpointLg){
+            display: none;
+         }
+      }
+      // white-space: nowrap;
+   }
+
+   &__item-text{
+      display: none;
+      @include media($breakpointLg){
+         display: inline;
+      }
+   }
+}
+
+.cart{
+}
+
+
+.navbar{
+   position: absolute;
+   top: 70px;
+   left: 0;
+   width: 100%;
+   background-color: #fff;
+   border-bottom: 1px solid $grayLight;
+   opacity: 0;
+   z-index: 9999;
+   box-sizing: border-box;
+   transform: translateX(-100%);
+   transition: 400ms;
+
+   &--active{
+      display: flex;
+      opacity: 1;
+      transform: translateX(0);
+   }
+
+   @include media($breakpointLg){
+      position: static;
+      padding: 15px 0;
+      display: flex;
+      opacity: 1;
+      height: auto;
+      transform: translateX(0);
+      transition: 0;
+   }
+}
+
+.nav{
+   margin: 10px;
+   @include media($breakpointLg){
+      margin: 0 auto;
+   }
+   &__item{
+      margin: 10px;
+      flex: 100%;
+
+      @include media($breakpointLg){
+         flex: auto;
+         margin: 0 20px;
+      }
+      @include media($breakpointXXl){
+         margin: 0 40px;
+      }
+   }
+   &__item--inactive{
+      display: none;
+      color: $grayLight;
+      @include media($breakpointLg){
+         display: block;
+      }
+   }
+
+   a {
+      font-size: 1.6rem;
+      font-weight: 700;
+   }
+
+   &__item--inactive a{
+      font-weight: 600;
+   }
+}
+
+.page-header {
+   background-color: #F4F5F5;
+   text-align: center;
+   &__title{
+      padding: 48px 0;
+      color: $grayText;
+      font-weight: 800;
+      letter-spacing: 4px;
+      font-size: 4rem;
+   }
+}
