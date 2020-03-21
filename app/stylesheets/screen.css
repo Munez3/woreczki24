@@ -441,6 +441,33 @@ address {
   -ms-flex: 6;
       flex: 6;
 }
+.flexbox--sm {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .flexbox--sm {
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.flexbox--lg {
+  display: block;
+}
+@media screen and (min-width: 1200px) {
+  .flexbox--lg {
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.flexbox--xxl {
+  display: block;
+}
+@media screen and (min-width: 2000px) {
+  .flexbox--xxl {
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
 
 .stretchbox {
   -ms-flex-align: stretch;
@@ -464,16 +491,6 @@ address {
         align-items: stretch;
   }
 }
-.flexbox--sm {
-  display: block;
-}
-@media screen and (min-width: 768px) {
-  .flexbox--sm {
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .flexbox-sm, .stretchbox-sm {
     display: -ms-flexbox;
@@ -690,8 +707,8 @@ address {
   color: #fff;
 }
 
-.text-bold {
-  font-weight: 800;
+.text-bold, strong {
+  font-weight: 700;
 }
 
 .text-f20 {
@@ -1022,13 +1039,14 @@ address {
   cursor: pointer;
 }
 
-.arrow--right::after {
-  border: solid #333A4180;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  margin: 0 7px;
+.arrow {
   padding: 3px;
-  content: '';
+  display: inline-block;
+  border: solid #333A4180;
+}
+.arrow--right {
+  margin: 0 15px;
+  border-width: 0 2px 2px 0;
   transform: rotate(-45deg);
 }
 
@@ -1741,60 +1759,87 @@ address {
 .shop-item__inventory-available--red {
   background-color: red;
 }
-.shop-item__price {
-  margin-top: 20px;
-}
 .shop-item__price-box {
-  margin-top: -8px;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+@media screen and (min-width: 600px) {
+  .shop-item__price-box {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    margin-top: -8px;
+  }
 }
 .shop-item__price-add {
-  margin-top: 10px;
+  margin: 5px 0;
+  width: 100%;
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 600px) {
   .shop-item__price-add {
-    margin-top: 0;
+    margin: 0;
+    width: auto;
   }
 }
 .shop-item__items-number {
-  margin: 0 15px;
+  margin: 15px 0;
   padding: 8px 20px;
   max-height: 33px;
   box-sizing: border-box;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .shop-item__items-number {
     margin: 0 30px;
   }
 }
 .shop-item__not-available {
-  margin-top: 10px;
-  -ms-flex-pack: start;
-      justify-content: flex-start;
+  margin-top: 20px;
+  width: 100%;
 }
 .shop-item__not-available--hide {
   display: none;
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 2000px) {
   .shop-item__not-available {
     margin-top: 0;
-    -ms-flex-pack: center;
-        justify-content: center;
+    width: auto;
   }
 }
 .shop-item__not-available-arrow {
   display: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 2000px) {
   .shop-item__not-available-arrow {
     display: block;
   }
 }
+.shop-item__not-available-info {
+  margin-top: 10px;
+  padding: 7px 20px;
+  background-color: #999ca0;
+  display: inline-block;
+  text-align: center;
+  width: 150px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 600px) {
+  .shop-item__not-available-info {
+    margin-top: 0;
+    margin-right: 20px;
+  }
+}
 .shop-item__not-available-notify {
   margin-top: 10px;
+  width: 100%;
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 600px) {
   .shop-item__not-available-notify {
     margin-top: 0;
+    width: auto;
   }
 }
 .shop-item__profit {
@@ -1804,7 +1849,7 @@ address {
   -ms-flex-pack: start;
       justify-content: flex-start;
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 1200px) {
   .shop-item__profit {
     -ms-flex-pack: center;
         justify-content: center;
@@ -1820,7 +1865,7 @@ address {
 .shop-item__profit-item {
   margin-top: 10px;
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 1200px) {
   .shop-item__profit-item {
     margin-top: 0px;
   }
@@ -1842,7 +1887,6 @@ address {
   margin-bottom: 15px;
   margin-left: 10px;
   font-size: 1.4rem;
-  font-weight: 600;
   display: flow-root;
 }
 .shop-item__details ul li::before {
@@ -1861,13 +1905,8 @@ address {
   -ms-flex: 1;
       flex: 1;
 }
-.shop-item__details-title {
+.shop-item__details-col h2 {
   font-size: 2rem;
-  font-weight: 800;
-}
-.shop-item__details-desc {
-  font-size: 1.4rem;
-  font-weight: 600;
 }
 
 div#__bs_notify__ {

@@ -95,6 +95,26 @@
   &--flex-2 {flex: 2;}
   &--flex-4 {flex: 4;}
   &--flex-6 {flex: 6;}
+
+  &--sm{
+    display: block;
+    @include media($breakpointSm){
+      display: flex;
+    }
+  }
+  &--lg{
+    display: block;
+    @include media($breakpointLg){
+      display: flex;
+    }
+  }
+
+  &--xxl{
+    display: block;
+    @include media($breakpointXXl){
+      display: flex;
+    }
+  }
 }
 
 .stretchbox{
@@ -113,13 +133,6 @@
     @extend .flexbox-xs;
     align-items: stretch;
   }
-}
-
-.flexbox--sm{
-   display: block;
-   @include media($breakpointSm){
-      display: flex;
-   }
 }
 
 @include media($breakpointSm){
@@ -301,8 +314,8 @@
 
 .text-white{color: #fff;}
 
-.text-bold {
-  font-weight: 800;
+.text-bold, strong {
+  font-weight: 700;
 }
 
 .text-f20 {

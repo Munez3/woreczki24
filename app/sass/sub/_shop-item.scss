@@ -63,56 +63,92 @@
     }
   }
 
-  &__price {
-    margin-top: 20px;
-  }
+  // &__price {
+  //   flex-direction: column;
+  //   margin-top: 20px;
+
+  //   @include media($breakpointMd){
+  //     flex-direction: row;
+  //   }
+  // }
 
   &__price-box {
-    margin-top: -8px;
+    flex-basis: 100%;
+    
+    @include media($breakpointXs){
+      flex-basis: auto;
+      margin-top: -8px;
+    }
   }
 
   &__price-add {
-    margin-top: 10px;
-    @include media($breakpointXXs) {
-      margin-top: 0;
+    margin: 5px 0;
+    width: 100%;
+    @include media($breakpointXs) {
+      margin: 0;
+      width: auto;
     }
   }
 
   &__items-number {
-    margin: 0 15px;
+    margin: 15px 0;
     padding: 8px 20px;
     max-height: 33px;
     box-sizing: border-box;
 
-    @include media($breakpointSm) {
+    @include media($breakpointXs) {
       margin: 0 30px;
     }
   }
 
   &__not-available {
+    margin-top: 20px;
+    width: 100%;
+
     &--hide {
       display: none;
     }
-    margin-top: 10px;
-    justify-content: flex-start;
-    @include media($breakpointXXs) {
+
+    @include media($breakpointXXl){
       margin-top: 0;
-      justify-content: center;
+      width: auto;
     }
   }
 
   &__not-available-arrow {
     display: none;
 
-    @include media($breakpointSm) {
+    @include media($breakpointXXl) {
       display: block;
+    }
+  }
+
+  &__not-available-info {
+    margin-top: 10px;
+    padding: 7px 20px;
+    background-color: $gray;
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    
+    @include media($breakpointXs) {
+      margin-top: 0;
+      margin-right: 20px;
     }
   }
 
   &__not-available-notify {
     margin-top: 10px;
-    @include media($breakpointXXs) {
+    width: 100%;
+    @include media($breakpointXs) {
       margin-top: 0;
+      width: auto;
     }
   }
 
@@ -121,14 +157,14 @@
     border-bottom: 1px solid #d6d7d9;
     padding: 35px 0;
     justify-content: flex-start;
-    @include media($breakpointXXs) {
+    @include media($breakpointLg) {
       justify-content: center;
     }
   }
 
   &__profit-icon {
     width: 44px;
-    height: 36px;
+    height: 36px; 
     margin-right: 20px;
     background-repeat: no-repeat;
     box-sizing: border-box;
@@ -136,7 +172,7 @@
 
   &__profit-item {
     margin-top: 10px;
-    @include media($breakpointXXs) {
+    @include media($breakpointLg) {
       margin-top: 0px;
     }
   }
@@ -153,7 +189,7 @@
         margin-bottom: 15px;
         margin-left: 10px;
         font-size: 1.4rem;
-        font-weight: 600;
+        // font-weight: 600;
         display: flow-root;
 
         &::before {
@@ -173,15 +209,9 @@
 
   &__details-col {
     flex: 1;
-  }
 
-  &__details-title {
-    font-size: 2rem;
-    font-weight: 800;
-  }
-
-  &__details-desc {
-    font-size: 1.4rem;
-    font-weight: 600;
+    h2{
+      font-size: 2rem;
+    }
   }
 }

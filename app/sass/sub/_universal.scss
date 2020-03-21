@@ -277,16 +277,12 @@
 }
 
 .arrow {
+   padding: 3px;
+   display: inline-block;
+   border: solid #333A4180;
    &--right {
-      &::after{
-         border: solid #333A4180;
-         border-width: 0 2px 2px 0;
-         display: inline-block;
-         margin: 0 7px;
-         padding: 3px;
-         content: '';
-         transform: rotate(-45deg);
-      }
-      
+      margin: 0 15px;
+      border-width: 0 2px 2px 0;
+      transform: rotate(-45deg);
    }
 }
