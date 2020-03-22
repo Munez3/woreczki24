@@ -6,16 +6,16 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>
       <?php if(is_front_page()):
-                  echo "Kofeina24 - suplementy w dobrej cenie";
+                  echo "Woreczki24";
             elseif(is_shop()):
-               echo "Sklep | Kofeina24 - suplementy w dobrej cenie";
+               echo "Sklep | Woreczki24";
             else:
-               echo get_the_title() . " | Kofeina24 - suplementy w dobrej cenie";
+               echo get_the_title() . " | Woreczki24";
             endif;
          ?>
    </title>
    <?php wp_head(); ?>
-   <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,900&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
 </head>
 <body>
    <!-- <header class="header flexbox">
@@ -70,25 +70,27 @@
                   </a>
                </h1>
             </div>
+            <?php //if ( is_active_sidebar( 'search' ) ) : ?>
+               <?php //dynamic_sidebar( 'search' ); ?>
+            <?php //endif; ?>
 
-            <div id="search" class="search">
-               <form class="" action="" method="post">
-                  <input type="text" placeholder="Szukaj w sklepie" class="search__input">
-               </form>
-            </div>
+            <?php get_search_form(); ?>
 
             <div class="account">
                <span class="account__item account__item--mobile">
                   <span id="search-btn" class="icon icon--search icon--big"></span>
                </span>
-               <span class="account__item">
+               <a href="<?= get_permalink( wc_get_page_id( 'cart' ) ) ?>" class="account__item">
                   <span class="icon icon--cart icon--big"></span>
                   <span class="account__item-text">Koszyk</span>
-               </span>
-               <span class="account__item">
+                  <?php if($woocommerce->cart->cart_contents_count > 0){ ?>
+                     <span class="cart-header__count text-center"><?php echo $woocommerce->cart->cart_contents_count; ?></span>
+                  <?php } ?>
+               </a>
+               <a href="<?= get_permalink( wc_get_page_id( 'myaccount' ) ) ?>" class="account__item">
                   <span class="icon icon--user icon--big"></span>
                   <span class="account__item-text">Zaloguj się</span>
-               </span>
+               </a>
             </div>
 
             <div class="burger">
@@ -98,15 +100,11 @@
       </div>
 
       <nav class="navbar">
-         <ul class="nav flexbox flexbox--sbet">
-            <li class="nav__item nav__item--inactive"><a href="">Kategorie:</a></li>
-            <li class="nav__item"><a href="">Doypack</a></li>
-            <li class="nav__item"><a href="">Fałdowe</a></li>
-            <li class="nav__item"><a href="">Aluminiowe</a></li>
-            <li class="nav__item"><a href="">Bezbarwne</a></li>
-            <li class="nav__item"><a href="">Kolorowe</a></li>
-            <li class="nav__item"><a href="">Papierowe</a></li>
-            <li class="nav__item"><a href="">Saszetki</a></li>
-         </ul>
+         <?php wp_nav_menu(array(
+            'theme_location' => 'nav-main',
+            'menu_class' => 'nav flexbox flexbox--sbet',
+            'menu_id' => '',
+            'container' => ''
+         )); ?>
       </nav>
    </header>

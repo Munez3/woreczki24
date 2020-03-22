@@ -4,20 +4,18 @@ add_theme_support( 'wc-product-gallery-lightbox' );
 
 function starter_scripts() {
     wp_deregister_script( 'jquery' );
-    // wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
     wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', false, NULL, true );
     wp_enqueue_script( 'jquery' );
 }
 add_action( 'wp_enqueue_scripts', 'starter_scripts' );
 
 function reset_query(){
-wp_reset_query();
+   wp_reset_query();
 }
 add_action( 'admin_init', 'reset_query' );
 
 add_action('wp_enqueue_scripts', 'load_styles_and_scripts');
 function load_styles_and_scripts() {
-  //wp_enqueue_style('style-main', get_template_directory_uri() . '/style.css');
   wp_enqueue_style('style-main', get_template_directory_uri() . '/stylesheets/screen.css');
   wp_enqueue_style('slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
 
@@ -36,6 +34,44 @@ function register_menu() {
     'nav-main' => 'Menu Główne',
     'nav-footer' => 'Menu w stopce'
   ));
+}
+
+function my_search_sidebar() {
+    register_sidebar(
+        array (
+            'name' => __( 'Szukaj', 'woreczki' ),
+            'id' => 'search',
+            'description' => __( 'Szukaj', 'woreczki' ),
+            'before_widget' => '<div id="search" class="search">',
+            'after_widget' => "</div>",
+            'before_title' => '',
+            'after_title' => '',
+        )
+    );
+}
+add_action( 'widgets_init', 'my_search_sidebar' );
+
+function my_custom_sidebar() {
+    register_sidebar(
+        array (
+            'name' => __( 'Sklep', 'woreczki' ),
+            'id' => 'filters',
+            'description' => __( 'Sklep', 'woreczki' ),
+            'before_widget' => '<aside class="shop-sidebar">',
+            'after_widget' => "</aside>",
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+        )
+    );
+}
+add_action( 'widgets_init', 'my_custom_sidebar' );
+
+add_filter('nav_menu_css_class', 'atg_menu_classes', 1, 3);
+function atg_menu_classes($classes, $item, $args) {
+  if($args->theme_location == 'nav-main') {
+    $classes[] = 'nav__item';
+  }
+  return $classes;
 }
 
 add_action( 'after_setup_theme', 'woocommerce_support' );
@@ -63,6 +99,7 @@ function loop_classes($classes, $class, $category){
    }
    return $classes;
 }
+
 remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
 add_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail_with_box', 10);
 function woocommerce_template_loop_product_thumbnail_with_box(){
@@ -239,11 +276,13 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 
 	?>
-   <a href="<?= get_permalink( wc_get_page_id( 'cart' ) ) ?>" class="cart-header__icon">
-     <?php if($woocommerce->cart->cart_contents_count > 0){ ?>
-         <span class="cart-header__count text-center"><?php echo $woocommerce->cart->cart_contents_count; ?></span>
-     <?php } ?>
-   </a>
+      <a href="<?= get_permalink( wc_get_page_id( 'cart' ) ) ?>" class="account__item">
+         <span class="icon icon--cart icon--big"></span>
+         <span class="account__item-text">Koszyk</span>
+         <?php if($woocommerce->cart->cart_contents_count > 0){ ?>
+            <span class="cart-header__count text-center">(<?php echo $woocommerce->cart->cart_contents_count; ?>)</span>
+         <?php } ?>
+      </a>
 	<?php
 	$fragments['a.cart-header__icon'] = ob_get_clean();
 	return $fragments;
