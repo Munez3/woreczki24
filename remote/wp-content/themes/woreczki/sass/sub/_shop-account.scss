@@ -1,5 +1,6 @@
 .shop-account {
   margin-top: 75px;
+
   .woocommerce {
     @extend .flexbox;
     @extend .flexbox--fstart;
@@ -35,10 +36,12 @@
 
       &-link {
         margin-left: 15px;
+
         a {
           display: block;
           padding: 10px 10px;
           width: 150px;
+
           &:hover {
             color: $red;
           }
@@ -51,11 +54,15 @@
     }
 
     &-MyAccount-content {
-      flex:4;
+      flex: 4;
       border: 1px solid #D6D7D9;
       padding: 20px;
       @include media($breakpointMd) {
         padding: 40px;
+      }
+
+      a {
+        color: $red;
       }
     }
 
@@ -71,13 +78,14 @@
       }
     }
 
-    &-form-row, .form-row  {
+    &-form-row, .form-row {
       /* czy jest lepszy sposob na nadpisanie stylu woocomerce? */
       margin-bottom: 30px !important;
     }
 
     &-EditAccountForm, &-address-fields {
       margin-top: 20px;
+
       label {
         font-size: 1.2rem;
         margin-bottom: 15px;
@@ -85,10 +93,18 @@
 
       fieldset {
         margin-top: 40px;
+
         legend {
           font-size: 1.8rem;
           font-weight: 800;
         }
+      }
+    }
+
+    &-info, &-message {
+      border-top-color: $red;
+      &:before {
+        color: $red;
       }
     }
   }

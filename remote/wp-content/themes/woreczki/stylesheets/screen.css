@@ -1964,6 +1964,9 @@ address {
     padding: 40px;
   }
 }
+.shop-account .woocommerce-MyAccount-content a {
+  color: #F65F5A;
+}
 .shop-account .woocommerce-form-login {
   width: 100%;
 }
@@ -1989,6 +1992,12 @@ address {
 .shop-account .woocommerce-EditAccountForm fieldset legend, .shop-account .woocommerce-address-fields fieldset legend {
   font-size: 1.8rem;
   font-weight: 800;
+}
+.shop-account .woocommerce-info, .shop-account .woocommerce-message {
+  border-top-color: #F65F5A;
+}
+.shop-account .woocommerce-info:before, .shop-account .woocommerce-message:before {
+  color: #F65F5A;
 }
 
 div#__bs_notify__ {
