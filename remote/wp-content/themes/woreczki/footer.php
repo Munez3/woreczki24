@@ -150,7 +150,7 @@
    </footer> -->
 
    <?php wp_footer(); ?>
-   <link property="stylesheet" rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/cookies/divante.cookies.css">
+   <!-- <link property="stylesheet" rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/cookies/divante.cookies.css">
    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/cookies/divante.cookies.min.js"></script>
    <script>window.jQuery.cookie || document.write('<script src="<?php echo get_template_directory_uri(); ?>/cookies/jquery.cookie.min.js"><\/script>')</script>
    <script>
@@ -160,6 +160,6 @@
       cookiesPageURL : '<?php echo get_site_url(); ?>/polityka-prywatnosci/'
       });
     });
-   </script>
+   </script> -->
    </body>
 </html>

@@ -30,24 +30,32 @@ get_header(); ?>
                   'posts_per_page' => 5,
                   'order' => 'DESC',
                   'orderby' => 'meta_value_num',
-                  'meta_key' => 'total_sales'
+                  'meta_key' => 'total_sales',
+   //                'tax_query'      => array( array(
+   //      'taxonomy'        => 'pa_szt',
+   //      'field'           => 'slug',
+   //      'terms'           =>  array('100'),
+   //      'operator'        => 'IN',
+   //  ))
+
+               // $res2 = get_terms('pa_szt');
                );
 
                $res = new WP_Query( $args );
                while ($res->have_posts()) : $res->the_post();
                   global $product; ?>
-                  <?php //$product->get_total_sales(); ?>
                   <div class="grid__item shop__item text-center flexbox flexbox--col flexbox--sbet">
-                     <?= woocommerce_get_product_thumbnail(); ?>
-                     <!-- <img src="./img/product2.png" alt="Produkt" class="shop__product-img"> -->
+                     <?= woocommerce_get_product_thumbnail(array('class' => ' shop__product-img')); ?>
                      <div>
                         <div class="shop__price">27zł / 100 szt.</div>
                         <h2 class="shop__product-name mgtb-20">
                            <?= $product->get_title(); ?>
                         </h2>
-                        <!-- <p>
-                           Torebki PAPIEROWE ECO z wysoką barierą zapachu, wilgoci i światła. Opakowanie z wielokrotnym zamknięciem strunowym ZIP. Torebki wykonane z laminatu PAP/AL/PE powlekane od środka folią. Opakowania te służą do przechowywania produktów sypkich lub półsypkich, które wymagają wysokiej bariery.
-                        </p> -->
+                        <?php if($product->get_short_description()): ?>
+                           <p>
+                              <?php echo $product->get_short_description(); ?>
+                           </p>
+                        <?php endif; ?>
                         <!-- <div class="shop__price">27zł / 100 szt.</div> -->
                         <div class="mgt-10">
                            <a href="<?= get_permalink(); ?>" class="btn">Zobacz</a>
@@ -89,8 +97,7 @@ get_header(); ?>
                      while ($res->have_posts()) : $res->the_post();
                         global $product; ?>
                         <div class="grid__item shop__item text-center flexbox flexbox--col flexbox--sbet">
-                           <?= woocommerce_get_product_thumbnail(); ?>
-                           <!-- <img src="./img/product2.png" alt="Produkt" class="shop__product-img"> -->
+                           <?= woocommerce_get_product_thumbnail(array('class' => ' shop__product-img')); ?>
                            <div>
                               <div class="shop__price">27zł / 100 szt.</div>
                               <h2 class="shop__product-name mgtb-20">
