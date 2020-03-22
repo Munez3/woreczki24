@@ -1,0 +1,86 @@
+.shop-account {
+  margin-top: 75px;
+  .woocommerce {
+    @extend .flexbox;
+    @extend .flexbox--fstart;
+    @extend .flexbox--astart;
+
+    h2 {
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    &-button, &-Button {
+      /*czy jest lepszy sposob na nadpisywanie styli woocommerca? */
+      background-color: $red !important;
+      font-size: 1.6rem !important;
+      color: #fff !important;
+      padding: 10px 30px !important;
+
+    }
+
+    &-MyAccount-navigation {
+      flex: 1;
+      font-size: 1.6rem;
+      font-weight: 600;
+      border: 1px solid #D6D7D9;
+      margin-right: 30px;
+      padding: 20px 0;
+
+
+      &-link {
+        margin-left: 15px;
+        a {
+          display: block;
+          padding: 10px 10px;
+          width: 150px;
+          &:hover {
+            color: $red;
+          }
+        }
+
+        &.is-active {
+          color: $red;
+        }
+      }
+    }
+
+    &-MyAccount-content {
+      flex:4;
+      border: 1px solid #D6D7D9;
+      padding: 40px;
+    }
+
+    &-form-login {
+      width: 100%;
+
+      &__rememberme {
+        input {
+          width: unset;
+          display: unset;
+          line-height: 0;
+        }
+      }
+    }
+
+    &-form-row {
+      /* czy jest lepszy sposob na nadpisanie stylu woocomerce? */
+      margin-bottom: 30px !important;
+    }
+
+    &-EditAccountForm {
+      label {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+      }
+
+      fieldset {
+        margin-top: 40px;
+        legend {
+          font-size: 1.8rem;
+          font-weight: 800;
+        }
+      }
+    }
+  }
+}

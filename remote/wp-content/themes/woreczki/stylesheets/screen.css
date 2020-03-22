@@ -374,7 +374,7 @@ address {
     width: 75%;
   }
 }
-.flexbox, .stretchbox {
+.flexbox, .stretchbox, .shop-account .woocommerce {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -404,11 +404,11 @@ address {
   -ms-flex-pack: justify;
       justify-content: space-between;
 }
-.flexbox--fstart {
+.flexbox--fstart, .shop-account .woocommerce {
   -ms-flex-pack: start;
       justify-content: flex-start;
 }
-.flexbox--astart {
+.flexbox--astart, .shop-account .woocommerce {
   -ms-flex-align: start;
       align-items: flex-start;
 }
@@ -1907,6 +1907,73 @@ address {
 }
 .shop-item__details-col h2 {
   font-size: 2rem;
+}
+
+.shop-account {
+  margin-top: 75px;
+}
+.shop-account .woocommerce h2 {
+  width: 100%;
+  margin: 20px 0;
+}
+.shop-account .woocommerce-button, .shop-account .woocommerce-Button {
+  /*czy jest lepszy sposob na nadpisywanie styli woocommerca? */
+  background-color: #F65F5A !important;
+  font-size: 1.6rem !important;
+  color: #fff !important;
+  padding: 10px 30px !important;
+}
+.shop-account .woocommerce-MyAccount-navigation {
+  -ms-flex: 1;
+      flex: 1;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border: 1px solid #D6D7D9;
+  margin-right: 30px;
+  padding: 20px 0;
+}
+.shop-account .woocommerce-MyAccount-navigation-link {
+  margin-left: 15px;
+}
+.shop-account .woocommerce-MyAccount-navigation-link a {
+  display: block;
+  padding: 10px 10px;
+  width: 150px;
+}
+.shop-account .woocommerce-MyAccount-navigation-link a:hover {
+  color: #F65F5A;
+}
+.shop-account .woocommerce-MyAccount-navigation-link.is-active {
+  color: #F65F5A;
+}
+.shop-account .woocommerce-MyAccount-content {
+  -ms-flex: 4;
+      flex: 4;
+  border: 1px solid #D6D7D9;
+  padding: 40px;
+}
+.shop-account .woocommerce-form-login {
+  width: 100%;
+}
+.shop-account .woocommerce-form-login__rememberme input {
+  width: unset;
+  display: unset;
+  line-height: 0;
+}
+.shop-account .woocommerce-form-row {
+  /* czy jest lepszy sposob na nadpisanie stylu woocomerce? */
+  margin-bottom: 30px !important;
+}
+.shop-account .woocommerce-EditAccountForm label {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+.shop-account .woocommerce-EditAccountForm fieldset {
+  margin-top: 40px;
+}
+.shop-account .woocommerce-EditAccountForm fieldset legend {
+  font-size: 1.8rem;
+  font-weight: 800;
 }
 
 div#__bs_notify__ {
