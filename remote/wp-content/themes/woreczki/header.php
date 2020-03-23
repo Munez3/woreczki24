@@ -89,7 +89,12 @@
                </a>
                <a href="<?= get_permalink( wc_get_page_id( 'myaccount' ) ) ?>" class="account__item">
                   <span class="icon icon--user icon--big"></span>
-                  <span class="account__item-text">Zaloguj się</span>
+                  <span class="account__item-text">
+                     <?php if(is_user_logged_in()){
+                        echo "Moje konto";
+                     }else {
+                        echo "Zaloguj się";
+                     }?></span>
                </a>
             </div>
 

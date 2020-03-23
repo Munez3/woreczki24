@@ -5,18 +5,18 @@ Template name: Strona Główna
 get_header(); ?>
 
    <div class="slider slick-slider" data-slider="">
-      <div class="slider__item" style="background-image: url('./img/slider-bg.png')">
-         <div class="container flexbox flexbox--col slider__100 text-center">
-            <div class="slider__title">Nowość!</div>
-            <div class="slider__line"></div>
-            <p>
-               Dostępny nowy typ worków <br/>wykonanych w 100% z materiałów EKO!
-            </p>
-            <a class="btn slider__btn" href="shop.html">
-               Kup teraz
-            </a>
+      <?php while(have_rows('slider')): the_row(); ?>
+         <div class="slider__item" style="background-image: url('<?php the_sub_field('image'); ?>')">
+            <div class="container flexbox flexbox--col slider__100 text-center">
+               <div class="slider__title"><?php the_sub_field('header'); ?></div>
+               <div class="slider__line"></div>
+               <?php the_sub_field('content'); ?>
+               <a class="btn slider__btn" href="<?php the_sub_field('link'); ?>">
+                  <?php the_sub_field('link_text'); ?>
+               </a>
+            </div>
          </div>
-      </div>
+      <?php endwhile; ?>
    </div>
 
    <main>
@@ -31,36 +31,35 @@ get_header(); ?>
                   'order' => 'DESC',
                   'orderby' => 'meta_value_num',
                   'meta_key' => 'total_sales',
-   //                'tax_query'      => array( array(
-   //      'taxonomy'        => 'pa_szt',
-   //      'field'           => 'slug',
-   //      'terms'           =>  array('100'),
-   //      'operator'        => 'IN',
-   //  ))
-
-               // $res2 = get_terms('pa_szt');
+                  // 'tax_query'      => array( array(
+                  //    'taxonomy'        => 'pa_amount',
+                  //    'field'           => 'slug',
+                  //    'terms'           =>  array('100'),
+                  //    'operator'        => 'IN',
+                  // ))
                );
-
                $res = new WP_Query( $args );
                while ($res->have_posts()) : $res->the_post();
                   global $product; ?>
                   <div class="grid__item shop__item text-center flexbox flexbox--col flexbox--sbet">
                      <?= woocommerce_get_product_thumbnail(array('class' => ' shop__product-img')); ?>
                      <div>
-                        <div class="shop__price">27zł / 100 szt.</div>
+                        <?= custom_variation_price(0, $product); ?>
                         <h2 class="shop__product-name mgtb-20">
                            <?= $product->get_title(); ?>
                         </h2>
+
+                        <?php /*
                         <?php if($product->get_short_description()): ?>
                            <p>
                               <?php echo $product->get_short_description(); ?>
                            </p>
                         <?php endif; ?>
-                        <!-- <div class="shop__price">27zł / 100 szt.</div> -->
+                        */ ?>
+
                         <div class="mgt-10">
-                           <a href="<?= get_permalink(); ?>" class="btn">Zobacz</a>
-                           <!-- <a href="<?= get_permalink(); ?>" class="btn btn--gray">Zobacz</a> -->
-                           <!-- <a href="<?= get_home_url().'?add-to-cart='.$product->get_id(); ?>" class="btn">Do koszyka</a> -->
+                           <a href="<?= get_permalink(); ?>" class="btn btn--gray">Zobacz</a>
+                           <a href="<?= esc_url( get_home_url()).'/?add-to-cart='.custom_default_variation_id(0, $product); ?>" class="btn">Do koszyka</a>
                         </div>
                      </div>
                   </div>
