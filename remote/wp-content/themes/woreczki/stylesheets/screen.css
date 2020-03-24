@@ -214,6 +214,48 @@ address {
   line-height: 1.5em;
 }
 
+.woocommerce-form-row, .woocommerce .form-row {
+  /* czy jest lepszy sposob na nadpisanie stylu woocomerce? */
+  margin-bottom: 30px !important;
+}
+.woocommerce-EditAccountForm, .woocommerce-address-fields {
+  margin-top: 20px;
+}
+.woocommerce-EditAccountForm label, .woocommerce-address-fields label {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+.woocommerce-EditAccountForm fieldset, .woocommerce-address-fields fieldset {
+  margin-top: 40px;
+}
+.woocommerce-EditAccountForm fieldset legend, .woocommerce-address-fields fieldset legend {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+.woocommerce-info, .woocommerce-message, .woocommerce-error {
+  border-top-color: #F65F5A;
+}
+.woocommerce-info:before, .woocommerce-message:before, .woocommerce-error:before {
+  color: #F65F5A;
+}
+
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce a.button.alt, .woocommerce button.button.alt {
+  background-color: #F65F5A;
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 10px 30px;
+  border: 1px solid #F65F5A;
+  border-radius: 0;
+}
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover {
+  background-color: #fff;
+  color: #F65F5A;
+}
+
+.woocommerce button.button:disabled[disabled] {
+  color: #fff;
+}
+
 .container {
   padding: 0 20px;
   margin: 0 auto;
@@ -1917,13 +1959,6 @@ address {
   width: 100%;
   margin: 20px 0;
 }
-.shop-account .woocommerce-button, .shop-account .woocommerce-Button, .shop-account .woocommerce .button {
-  /*czy jest lepszy sposob na nadpisywanie styli woocommerca? */
-  background-color: #F65F5A !important;
-  font-size: 1.6rem !important;
-  color: #fff !important;
-  padding: 10px 30px !important;
-}
 .shop-account .woocommerce-MyAccount-navigation {
   -ms-flex: 1;
       flex: 1;
@@ -1965,7 +2000,7 @@ address {
     padding: 40px;
   }
 }
-.shop-account .woocommerce-MyAccount-content a {
+.shop-account .woocommerce-MyAccount-content p a {
   color: #F65F5A;
 }
 .shop-account .woocommerce-form-login {
@@ -1976,29 +2011,69 @@ address {
   display: unset;
   line-height: 0;
 }
-.shop-account .woocommerce-form-row, .shop-account .woocommerce .form-row {
-  /* czy jest lepszy sposob na nadpisanie stylu woocomerce? */
-  margin-bottom: 30px !important;
+
+.shop-cart .woocommerce {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
 }
-.shop-account .woocommerce-EditAccountForm, .shop-account .woocommerce-address-fields {
-  margin-top: 20px;
+.shop-cart .woocommerce .product-name {
+  max-width: 440px;
 }
-.shop-account .woocommerce-EditAccountForm label, .shop-account .woocommerce-address-fields label {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-}
-.shop-account .woocommerce-EditAccountForm fieldset, .shop-account .woocommerce-address-fields fieldset {
-  margin-top: 40px;
-}
-.shop-account .woocommerce-EditAccountForm fieldset legend, .shop-account .woocommerce-address-fields fieldset legend {
-  font-size: 1.8rem;
+.shop-cart .woocommerce .product-name a {
+  font-size: 1.6rem;
   font-weight: 800;
 }
-.shop-account .woocommerce-info, .shop-account .woocommerce-message {
-  border-top-color: #F65F5A;
-}
-.shop-account .woocommerce-info:before, .shop-account .woocommerce-message:before {
+.shop-cart .woocommerce .product-price .amount, .shop-cart .woocommerce .product-subtotal .amount {
+  font-size: 3.4rem;
   color: #F65F5A;
+  font-weight: 800;
+}
+.shop-cart .woocommerce .product-quantity input {
+  width: 120px;
+}
+.shop-cart .woocommerce .shop_table {
+  border: none;
+}
+.shop-cart .woocommerce .shop_table th {
+  font-size: 1.4rem;
+  opacity: 0.5;
+  font-weight: 600;
+}
+.shop-cart .woocommerce .cart_totals {
+  border: 1px solid #D6D7D9;
+  padding: 20px 30px;
+}
+.shop-cart .woocommerce .cart_totals h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.shop-cart .woocommerce .cart_totals .cart-subtotal th, .shop-cart .woocommerce .cart_totals .order-total th {
+  color: #333A41;
+  opacity: 1;
+  font-size: 1.6rem;
+}
+.shop-cart .woocommerce .cart_totals .cart-subtotal .amount, .shop-cart .woocommerce .cart_totals .order-total .amount {
+  font-size: 2.6rem;
+  font-weight: 800;
+}
+.shop-cart .woocommerce .coupon {
+  display: -ms-flexbox;
+  display: flex;
+}
+.shop-cart .woocommerce .coupon input {
+  margin-right: 20px;
+}
+
+.shop-checkout .woocommerce-billing-fields__field-wrapper {
+  margin-top: 20px;
+}
+.shop-checkout .woocommerce-billing-fields label {
+  font-size: 1.2rem;
+}
+.shop-checkout .woocommerce-checkout-review-order {
+  margin-top: 20px;
 }
 
 div#__bs_notify__ {
