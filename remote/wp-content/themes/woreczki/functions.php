@@ -83,16 +83,22 @@ function woocommerce_support() {
 
 add_shortcode('wc_sorting', 'woocommerce_catalog_ordering');
 
-//overwrite class to shop product list wrapper (ul)
-function woocommerce_product_loop_start( $echo = true ) {
-   echo "<ul class='grid grid--col-5 grid--gap-15'>";
-   // ob_start();
-   // wc_get_template( 'loop/loop-start.php' );
-   // if ( $echo )
-   //    echo ob_get_clean();
-   // else
-   //    return ob_get_clean();
+add_filter('woocommerce_product_loop_start', 'overrideStartLoop');
+
+function overrideStartLoop(){
+   return "<ul class='grid grid--col-5 grid--gap-15'>";
 }
+
+//overwrite class to shop product list wrapper (ul)
+// function woocommerce_product_loop_start( $echo = true ) {
+//    echo "<ul class='grid grid--col-5 grid--gap-15'>";
+//    // ob_start();
+//    // wc_get_template( 'loop/loop-start.php' );
+//    // if ( $echo )
+//    //    echo ob_get_clean();
+//    // else
+//    //    return ob_get_clean();
+// }
 
 // add class to each product box
 add_filter('post_class', 'loop_classes', 1, 3);
@@ -110,6 +116,12 @@ function ts_change_breadcrumb_home_text( $defaults ) {
    return $defaults;
 }
 
+//wrap title, description and price in div
+add_action('woocommerce_before_shop_loop_item_title', function(){echo '<div class="flexbox flexbox--col">';}, 40);
+add_action('woocommerce_after_shop_loop_item_title', function(){echo '</div>';}, 40);
+remove_action('woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10);
+remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+
 // custom product title in shop loop
 remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title');
 add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title_custom');
@@ -117,13 +129,7 @@ function woocommerce_template_loop_product_title_custom() {
    echo '<h2 class="shop__product-name mgtb-20 ' . esc_attr( apply_filters( 'woocommerce_product_loop_title_classes', 'woocommerce-loop-product__title' ) ) . '">' . get_the_title() . '</h2>';
 }
 
-add_action('woocommerce_shop_loop_item_title', 'show_short_description2', 20);
-function show_short_description2(){
-   global $product;
-   echo '<div>'.custom_variation_price(0, $product).'</div>';
-}
-
-// display short description in shop loop
+// display short description after title in shop loop
 add_action('woocommerce_after_shop_loop_item_title', 'show_short_description', 1);
 function show_short_description(){
    global $product;
@@ -153,7 +159,7 @@ function custom_variation_price( $price, $product ) {
     $selectedPrice = '<div class="shop__price">'.wc_price($price).' / '.$variationType.'szt.</div>';
 
     return $selectedPrice;
-}
+} 
 
 function custom_default_variation_id( $price, $product ) {
     $available_variations = $product->get_available_variations();
@@ -174,13 +180,13 @@ function custom_default_variation_id( $price, $product ) {
     return $variation_id;
 }
 
-// product
+// buttons for loop product
 remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart');
 add_action('woocommerce_after_shop_loop_item', 'custom_woocommerce_template_loop_add_to_cart');
 function custom_woocommerce_template_loop_add_to_cart() {
    global $product;
    echo '<div class="mgt-10">'.
-      '<a href="'.get_permalink().'" class="btn btn--gray">Zobacz</a>'.
+      '<a href="'.get_permalink().'" class="btn btn--gray">Zobacz</a> '.
       '<a href="'.esc_url( $product->add_to_cart_url()).'?add-to-cart='.custom_default_variation_id(0, $product).'" class="btn">Do koszyka</a>'.
    '</div>';
 }
@@ -190,9 +196,6 @@ add_filter( 'woocommerce_show_page_title', 'not_a_shop_page' );
 function not_a_shop_page() {
     return boolval(!is_shop() && !is_product_category());
 }
-
-remove_action('woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10);
-remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 // remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 //
 // remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
