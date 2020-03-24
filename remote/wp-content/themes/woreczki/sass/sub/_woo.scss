@@ -49,3 +49,8 @@
 .woocommerce button.button:disabled[disabled] {
   color: #fff;
 }
+
+.product_title.entry-title{
+   @extend .shop-item__title;
+   @extend .text-f20;
+}

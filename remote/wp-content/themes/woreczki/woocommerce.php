@@ -17,10 +17,8 @@ if ( is_singular( 'product' ) ) { ?>
       ?>
    </div>
    <div class="shop-item container">
-         <div class="shop-item__content flexbox  mgt-70">
-   <?php woocommerce_content(); ?>
-</div>
-</div>
+      <?php woocommerce_content(); ?>
+   </div>
 <?php }else{ ?>
    <div class="page-header">
       <h1 class="page-header__title">Produkty</h1>

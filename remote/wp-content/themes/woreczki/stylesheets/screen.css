@@ -753,7 +753,7 @@ address {
   font-weight: 700;
 }
 
-.text-f20 {
+.text-f20, .product_title.entry-title {
   font-size: 2rem;
 }
 
@@ -1768,7 +1768,7 @@ address {
         flex: 2;
   }
 }
-.shop-item__title {
+.shop-item__title, .product_title.entry-title {
   color: #333a41;
   font-weight: 700;
   border-bottom: 1px solid #d6d7d9;
