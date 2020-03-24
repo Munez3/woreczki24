@@ -1,0 +1,70 @@
+.shop-cart {
+  .woocommerce {
+    display: flex;
+    flex-direction: column;
+
+    .product-name {
+      max-width: 440px;
+      a {
+        font-size: 1.6rem;
+        font-weight: 800;
+      }
+
+
+    }
+
+    .product-price, .product-subtotal {
+      .amount {
+        font-size: 3.4rem;
+        color: $red;
+        font-weight: 800;
+      }
+    }
+
+    .product-quantity {
+      input {
+        width: 120px;
+
+      }
+    }
+
+    .shop_table {
+      border: none;
+
+      th {
+        font-size: 1.4rem;
+        opacity: 0.5;
+        font-weight: 600;
+      }
+    }
+
+    .cart_totals {
+      border: 1px solid #D6D7D9;
+      padding: 20px 30px;
+
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+
+      .cart-subtotal, .order-total {
+        th {
+          color: $grayText;
+          opacity: 1;
+          font-size: 1.6rem;
+        }
+        .amount {
+          font-size: 2.6rem;
+          font-weight: 800;
+        }
+      }
+    }
+
+    .coupon {
+      display: flex;
+      input {
+        margin-right: 20px;
+      }
+    }
+  }
+}

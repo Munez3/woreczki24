@@ -25,6 +25,7 @@
 
   @import "compass/reset";
   @import 'sub/reset';
+  @import "sub/woo";
   @import 'sub/layout';
   @import 'sub/universal';
   @import 'sub/header';
@@ -34,6 +35,8 @@
   @import 'sub/about';
   @import 'sub/shop-item';
   @import "sub/shop-account";
+  @import "sub/shop-cart";
+  @import "sub/shop-checkout";
   // @import 'sub/page';
   // @import 'sub/contact';
   // @import 'sub/lightbox';

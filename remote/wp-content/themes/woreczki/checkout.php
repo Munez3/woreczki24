@@ -1,6 +1,6 @@
 <?php
 /*
-Template name: Koszyk
+Template name: Zamówienie
 */
 get_header(); ?>
 
@@ -17,8 +17,8 @@ get_header(); ?>
     ?>
 </div>
 <main>
-    <div class="shop-cart container">
-        <?php echo do_shortcode('[woocommerce_cart]'); ?>
+    <div class="shop-checkout container">
+        <?php echo do_shortcode('[woocommerce_checkout]'); ?>
     </div>
 </main>
 

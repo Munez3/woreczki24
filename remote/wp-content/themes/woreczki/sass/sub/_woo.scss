@@ -1,0 +1,51 @@
+.woocommerce {
+  &-form-row, .form-row {
+    /* czy jest lepszy sposob na nadpisanie stylu woocomerce? */
+    margin-bottom: 30px !important;
+  }
+
+  &-EditAccountForm, &-address-fields {
+    margin-top: 20px;
+
+    label {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    fieldset {
+      margin-top: 40px;
+
+      legend {
+        font-size: 1.8rem;
+        font-weight: 800;
+      }
+    }
+  }
+
+  &-info, &-message, &-error {
+    border-top-color: $red;
+    &:before {
+      color: $red;
+    }
+  }
+
+}
+
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce a.button.alt, .woocommerce button.button.alt {
+  background-color: $red;
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 10px 30px;
+  border: 1px solid $red;
+  border-radius: 0;
+
+  &:hover {
+    background-color: #fff;
+    color: $red;
+
+  }
+}
+
+.woocommerce button.button:disabled[disabled] {
+  color: #fff;
+}
