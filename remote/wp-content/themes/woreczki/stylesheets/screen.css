@@ -1027,16 +1027,15 @@ address {
   color: #333A41;
   opacity: 0.5;
   text-transform: uppercase;
+  cursor: pointer;
 }
-.breadcrumb__item--active {
+.breadcrumb__item:last-child {
   color: #F65F5A;
   width: 250px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-.breadcrumb__item:hover {
-  cursor: pointer;
+  cursor: auto;
 }
 
 .arrow {

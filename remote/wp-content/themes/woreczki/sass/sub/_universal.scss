@@ -260,18 +260,16 @@
       color: #333A41;
       opacity: 0.5;
       text-transform: uppercase;
+      cursor: pointer;
 
 
-      &--active{
-         color:#F65F5A;         
+      &:last-child{
+         color:#F65F5A;
          width: 250px;
          white-space: nowrap;
          overflow: hidden;
          text-overflow: ellipsis;
-      }
-
-      &:hover{
-         cursor: pointer;
+         cursor: auto;
       }
    }
 }

@@ -89,17 +89,6 @@ function overrideStartLoop(){
    return "<ul class='grid grid--col-5 grid--gap-15'>";
 }
 
-//overwrite class to shop product list wrapper (ul)
-// function woocommerce_product_loop_start( $echo = true ) {
-//    echo "<ul class='grid grid--col-5 grid--gap-15'>";
-//    // ob_start();
-//    // wc_get_template( 'loop/loop-start.php' );
-//    // if ( $echo )
-//    //    echo ob_get_clean();
-//    // else
-//    //    return ob_get_clean();
-// }
-
 // add class to each product box
 add_filter('post_class', 'loop_classes', 1, 3);
 function loop_classes($classes, $class, $category){
@@ -159,7 +148,7 @@ function custom_variation_price( $price, $product ) {
     $selectedPrice = '<div class="shop__price">'.wc_price($price).' / '.$variationType.'szt.</div>';
 
     return $selectedPrice;
-} 
+}
 
 function custom_default_variation_id( $price, $product ) {
     $available_variations = $product->get_available_variations();
@@ -256,20 +245,20 @@ function remove_postcode_validation( $fields ) {
 	return $fields;
 }
 
-add_filter( 'woocommerce_currencies', 'add_my_currency' );
-function add_my_currency( $currencies ) {
-     $currencies['PLN'] = __( 'PLN', 'woocommerce' );
-     return $currencies;
-}
-
-
-add_filter('woocommerce_currency_symbol', 'add_my_currency_symbol', 10, 2);
-function add_my_currency_symbol( $currency_symbol, $currency ) {
-     switch( $currency ) {
-          case 'PLN': $currency_symbol = 'PLN'; break;
-     }
-     return $currency_symbol;
-}
+// add_filter( 'woocommerce_currencies', 'add_my_currency' );
+// function add_my_currency( $currencies ) {
+//      $currencies['PLN'] = __( 'PLN', 'woocommerce' );
+//      return $currencies;
+// }
+//
+//
+// add_filter('woocommerce_currency_symbol', 'add_my_currency_symbol', 10, 2);
+// function add_my_currency_symbol( $currency_symbol, $currency ) {
+//      switch( $currency ) {
+//           case 'PLN': $currency_symbol = 'PLN'; break;
+//      }
+//      return $currency_symbol;
+// }
 
  // add_filter('woocommerce_show_variation_price',      function() { return TRUE;});
 
