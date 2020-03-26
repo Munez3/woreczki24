@@ -2,6 +2,7 @@
 .shop-sidebar {
    display: none;
    flex: 0 1 250px;
+   margin-right: 50px;
    // @include media($breakpointMd){
    //    flex-basis: 250px;
    // }
@@ -12,6 +13,39 @@
    @include media($breakpointXXl){
       flex-basis: 366px;
    }
+
+   &__item {
+      border: 1px solid #D6D7D9;
+      padding: 30px;
+
+      h2 {
+         font-size: 1.8rem;
+         margin-bottom: 20px;
+      }
+
+      ul {
+         font-size: 1.6rem;
+         font-weight: 600;
+
+         ul {
+            margin-top: 20px;
+            margin-left: 30px;
+
+         }
+      }
+
+      li {
+         margin-bottom: 20px;
+      }
+
+      a {
+         &:hover {
+            color: $red;
+         }
+      }
+   }
+
+
 }
 
 .shop{
@@ -149,6 +183,14 @@
          flex: 0 0 230px;
          width: auto;
       }
+   }
+
+   .orderby {
+      padding: 10px 16px;
+      min-width: 260px;
+      font-family: $font;
+      border: 1px solid #D6D7D9;
+
    }
 
 }

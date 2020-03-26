@@ -9,10 +9,20 @@
       font-size: 1.2rem;
     }
 
+
   }
 
   .woocommerce-checkout-review-order {
     margin-top: 20px;
 
+  }
+
+  .woocommerce-additional-fields {
+    label {
+      font-size: 1.6rem;
+    }
+    textarea {
+      min-height: 130px;
+    }
   }
 }

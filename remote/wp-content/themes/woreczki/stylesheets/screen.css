@@ -252,6 +252,21 @@ address {
   color: #F65F5A;
 }
 
+.woocommerce form .form-row label.checkbox {
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.woocommerce form .form-row label.checkbox input {
+  -ms-flex: 0.1;
+      flex: 0.1;
+}
+
+.woocommerce form .form-row .input-checkbox {
+  margin: 0;
+}
+
 .woocommerce button.button:disabled[disabled] {
   color: #fff;
 }
@@ -1576,6 +1591,7 @@ address {
   display: none;
   -ms-flex: 0 1 250px;
       flex: 0 1 250px;
+  margin-right: 50px;
 }
 @media screen and (min-width: 1200px) {
   .shop-sidebar {
@@ -1589,6 +1605,28 @@ address {
     -ms-flex-preferred-size: 366px;
         flex-basis: 366px;
   }
+}
+.shop-sidebar__item {
+  border: 1px solid #D6D7D9;
+  padding: 30px;
+}
+.shop-sidebar__item h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.shop-sidebar__item ul {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.shop-sidebar__item ul ul {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.shop-sidebar__item li {
+  margin-bottom: 20px;
+}
+.shop-sidebar__item a:hover {
+  color: #F65F5A;
 }
 
 .shop {
@@ -1722,6 +1760,12 @@ address {
         flex: 0 0 230px;
     width: auto;
   }
+}
+.shop .orderby {
+  padding: 10px 16px;
+  min-width: 260px;
+  font-family: "Open Sans", sans-serif;
+  border: 1px solid #D6D7D9;
 }
 
 .about {
@@ -2073,6 +2117,12 @@ address {
 }
 .shop-checkout .woocommerce-checkout-review-order {
   margin-top: 20px;
+}
+.shop-checkout .woocommerce-additional-fields label {
+  font-size: 1.6rem;
+}
+.shop-checkout .woocommerce-additional-fields textarea {
+  min-height: 130px;
 }
 
 div#__bs_notify__ {
