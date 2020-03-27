@@ -27,13 +27,48 @@
    &-category {
       font-size: 1.6rem;
       font-weight: 600;
-      &--sub {
+      &-sub {
+         transition: all 1s;
          margin-top: 20px;
          margin-left: 30px;
+         display: none;
+
+         &--show {
+            display: block;
+         }
       }
 
       &__item {
          margin-bottom: 20px;
+
+         &--has-sub {
+            position: relative;
+            &:hover {
+               cursor: pointer;
+            }
+
+            &.sub-show {
+               transition: transform 0.3s;
+               &:after {
+                  transform: rotate(225deg);
+               }
+            }
+
+
+            &:after {
+               transition: transform 0.3s;
+               content: '';
+               position: absolute;
+               padding: 3px;
+               display: inline-block;
+               border: solid #333A41;
+               margin: 0 15px;
+               border-width: 0 3px 3px 0;
+               transform: rotate(45deg);
+               right: 0;
+               top: 3px;
+            }
+         }
       }
 
       a {
@@ -200,6 +235,8 @@
 .gridSwitcher {
    display: flex;
    width: 70px;
+   float: left;
+   margin-right: 40px;
    &__item {
       font-size: 3rem;
 

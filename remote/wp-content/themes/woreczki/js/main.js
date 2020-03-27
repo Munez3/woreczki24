@@ -6,6 +6,7 @@
       universal.cacheSelector();
       universal.bindEvents();
       universal.gridListSwitch();
+      universal.toggleSubCategories();
 
       if(universal.$slider.length > 0){
 
@@ -80,8 +81,6 @@
       for (let i = 0; i < gridSwitcher.length; i++) {
          const child = gridSwitcher[i];
          child.addEventListener('click', (e)=> {
-            // gridSwitcher[0].classList.remove('gridSwitcher__item--active');
-            // gridSwitcher[1].classList.remove('gridSwitcher__item--active');
 
             e.target.classList.add('gridSwitcher__item--active');
 
@@ -108,6 +107,17 @@
       }
 
 
+   };
+
+
+   universal.toggleSubCategories = function() {
+      $('.shop-sidebar-category__item').on('click', function () {
+         const sub = $(this).children()[1];
+         if(sub) {
+            $(this).toggleClass('sub-show');
+            $(this).find(".shop-sidebar-category-sub").toggleClass('shop-sidebar-category-sub--show')
+         }
+      })
    };
 
 
