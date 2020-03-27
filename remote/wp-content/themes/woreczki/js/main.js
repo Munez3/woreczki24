@@ -70,12 +70,12 @@
 
    universal.gridListSwitch = function() {
       console.log(localStorage.getItem('shopView'))
-      const isGridLS = localStorage.getItem('shopView') === "grid";
+      const isListLS = localStorage.getItem('shopView') === "list";
 
       const gridSwitcher = document.querySelector('#gridSwitcher').children;
       const shopItemsContainer = document.querySelector('.shop > ul');
 
-      changeView(isGridLS);
+      changeView(isListLS);
 
       for (let i = 0; i < gridSwitcher.length; i++) {
          const child = gridSwitcher[i];
@@ -85,25 +85,25 @@
 
             e.target.classList.add('gridSwitcher__item--active');
 
-            const isGrid = e.target.id ==="switchGrid";
+            const isList = e.target.id ==="switchList";
 
-            changeView(isGrid);
+            changeView(isList);
 
          })
       }
 
-      function changeView(isGrid) {
+      function changeView(isList) {
          gridSwitcher[0].classList.remove('gridSwitcher__item--active');
          gridSwitcher[1].classList.remove('gridSwitcher__item--active');
 
-         if(isGrid) {
-            shopItemsContainer.classList.add('grid');
-            gridSwitcher[0].classList.add('gridSwitcher__item--active');
-            localStorage.setItem('shopView', 'grid');
-         } else {
+         if(isList) {
             shopItemsContainer.classList.remove('grid');
             gridSwitcher[1].classList.add('gridSwitcher__item--active');
             localStorage.setItem('shopView', 'list');
+         } else {
+            shopItemsContainer.classList.add('grid');
+            gridSwitcher[0].classList.add('gridSwitcher__item--active');
+            localStorage.setItem('shopView', 'grid');
          }
       }
 
