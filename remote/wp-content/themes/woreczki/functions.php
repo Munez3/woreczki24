@@ -109,11 +109,22 @@ function ts_change_breadcrumb_home_text( $defaults ) {
    return $defaults;
 }
 
-//wrap title, description and price in div
-add_action('woocommerce_before_shop_loop_item_title', function(){echo '<div class="flexbox flexbox--col">';}, 40);
-add_action('woocommerce_after_shop_loop_item_title', function(){echo '</div>';}, 40);
 remove_action('woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10);
 remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+
+
+remove_action('woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open');
+remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close');
+//wrap title, description and price in div
+add_action('woocommerce_before_shop_loop_item_title', function(){echo '<div class="shop__content flexbox flexbox--col">';}, 40);
+add_action('woocommerce_after_shop_loop_item_title', function(){echo '</div>';}, 40);
+
+remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
+add_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail_with_box', 10);
+function woocommerce_template_loop_product_thumbnail_with_box(){
+   echo woocommerce_get_product_thumbnail(array('class' => ' shop__product-img'));
+   // echo '<div class="shop__thumbnail text-center">'.woocommerce_get_product_thumbnail().'</div>'; // WPCS: XSS ok.
+}
 
 // custom product title in shop loop
 remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title');
@@ -126,7 +137,7 @@ function woocommerce_template_loop_product_title_custom() {
 add_action('woocommerce_after_shop_loop_item_title', 'show_short_description', 1);
 function show_short_description(){
    global $product;
-   echo '<p>'.$product->get_short_description().'</p>';
+   echo '<p class="shop__item-excerpt">'.$product->get_short_description().'</p>';
 }
 
 // get default variation price
@@ -175,7 +186,7 @@ function custom_default_variation_id( $price, $product ) {
 
 // buttons for loop product
 remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart');
-add_action('woocommerce_after_shop_loop_item', 'custom_woocommerce_template_loop_add_to_cart');
+add_action('woocommerce_after_shop_loop_item_title', 'custom_woocommerce_template_loop_add_to_cart', 30);
 function custom_woocommerce_template_loop_add_to_cart() {
    global $product;
    echo '<div class="mgt-10">'.
@@ -191,11 +202,6 @@ function not_a_shop_page() {
 }
 // remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 //
-// remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
-// add_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail_with_box', 10);
-function woocommerce_template_loop_product_thumbnail_with_box(){
-   echo '<div class="shop__thumbnail text-center">'.woocommerce_get_product_thumbnail().'</div>'; // WPCS: XSS ok.
-}
 
 // Add back to store button on WooCommerce cart page
 // add_action('woocommerce_cart_actions', 'themeprefix_back_to_store');

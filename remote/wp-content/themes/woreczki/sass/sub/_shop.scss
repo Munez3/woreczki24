@@ -180,6 +180,10 @@
       }
    }
 
+   &__item-excerpt{
+      display: none;
+   }
+
    &__price{
       color: $red;
       font-weight: 700;
@@ -209,16 +213,29 @@
    }
 
    @include media($breakpointMd){
-      &__item--row{
+      &-list-view{
+         grid-template-columns: none;
+      }
+
+      &-list-view &__item{
+         flex-wrap: nowrap;
          flex-direction: row;
          border-bottom: 1px solid $grayLight;
          text-align: left;
          box-shadow: none;
       }
 
-      &__item--row &__product-img{
+      &-list-view &__content{
+         display: block;
+      }
+
+      &-list-view &__item-excerpt{
+         display: block;
+      }
+
+      &-list-view &__product-img{
          flex: 0 0 230px;
-         width: auto;
+         // width: auto;
       }
    }
 
@@ -235,8 +252,8 @@
 .gridSwitcher {
    display: flex;
    width: 70px;
-   float: left;
-   margin-right: 40px;
+   float: right;
+   // margin-right: 40px;
    &__item {
       font-size: 3rem;
 

@@ -96,11 +96,11 @@
          gridSwitcher[1].classList.remove('gridSwitcher__item--active');
 
          if(isList) {
-            shopItemsContainer.classList.remove('grid');
+            shopItemsContainer.classList.add('shop-list-view');
             gridSwitcher[1].classList.add('gridSwitcher__item--active');
             localStorage.setItem('shopView', 'list');
          } else {
-            shopItemsContainer.classList.add('grid');
+            shopItemsContainer.classList.remove('shop-list-view');
             gridSwitcher[0].classList.add('gridSwitcher__item--active');
             localStorage.setItem('shopView', 'grid');
          }
