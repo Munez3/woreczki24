@@ -216,19 +216,19 @@
 }
 
 
-.col-2{
-   @include media($breakpointMd){
-      columns: 2;
-      column-gap: 50px;
-      column-rule: 1px solid #000;
-   }
-   @include media($breakpointXl){
-      column-gap: 200px;
-   }
-}
+// .col-2{
+//    @include media($breakpointMd){
+//       columns: 2;
+//       column-gap: 50px;
+//       column-rule: 1px solid #000;
+//    }
+//    @include media($breakpointXl){
+//       column-gap: 200px;
+//    }
+// }
 
 .btn{
-   padding: 7px 20px;
+   padding: 8px 20px;
    display: inline-block;
    background-color: $red;
    text-align: center;

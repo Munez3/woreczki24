@@ -56,7 +56,6 @@ get_header(); ?>
                            </p>
                         <?php endif; ?>
                         */ ?>
-
                         <div class="mgt-10">
                            <a href="<?= get_permalink(); ?>" class="btn btn--gray">Zobacz</a>
                            <a href="<?= esc_url( get_home_url()).'/?add-to-cart='.custom_default_variation_id(0, $product); ?>" class="btn">Do koszyka</a>
@@ -78,7 +77,7 @@ get_header(); ?>
 
             $res = get_categories($args);
             foreach ($res as $category) {
-               if($category->category_parent == 0) {
+               if($category->category_parent == 0 && !in_array($category->slug, ['bez-kategorii', 'pojemnosc'])) {
                   $category_id = $category->term_id;
                ?>
                   <section class="shop__category-row mgtb-80 row grid grid--col-6 grid--gap-15">
@@ -107,9 +106,8 @@ get_header(); ?>
                               </p> -->
                               <!-- <div class="shop__price">27zł / 100 szt.</div> -->
                               <div class="mgt-10">
-                                 <a href="<?= get_permalink(); ?>" class="btn">Zobacz</a>
-                                 <!-- <a href="<?= get_permalink(); ?>" class="btn btn--gray">Zobacz</a> -->
-                                 <!-- <a href="<?= get_home_url().'?add-to-cart='.$product->get_id(); ?>" class="btn">Do koszyka</a> -->
+                                 <a href="<?= get_permalink(); ?>" class="btn btn--gray">Zobacz</a>
+                                 <a href="<?= esc_url( get_home_url()).'/?add-to-cart='.custom_default_variation_id(0, $product); ?>" class="btn">Do koszyka</a>
                               </div>
                            </div>
                         </div>

@@ -1,16 +1,18 @@
 <footer>
       <div class="container">
-         <div class="about row mgtb-80 flexbox">
-            <div class="col-md-5">
-               <img src="./img/etykieta-wit-c-5kg.svg" alt="" class="img">
+         <?php if(!is_singular( 'product' )): ?>
+            <div class="about row mgtb-80 flexbox">
+               <div class="col-md-5">
+                  <img src="./img/etykieta-wit-c-5kg.svg" alt="" class="img">
+               </div>
+               <div class="col-md-7">
+                  <h2 class="about__header">O Woreczki24.pl</h2>
+                  <p>
+                     Oferujemy szeroką gamę torebek strunowych wykonanych z papieru kraft, folii PET/PE, aluminium połączonych w laminaty dwu lub trzy warstwowe. W naszej ofercie dostępne są torebki typu doypack z dnem, saszetki, opakowania fałdowe, worki z suwakiem, plomby oraz urządzenia zgrzewające. Nowością są torebki papierowe eco WINDOW z dużym okienkiem lub bez okienka. Tego typu opakowania przeznaczone są za równo do produktów suchych jak i tłustych. Sukcesywnie staramy się poszerzać ofertę opakowań doypack w co raz to nowsze modele. W tym roku do sprzedaży wprowadzamy torebki doypack eco z okienkiem wąskim.
+                  </p>
+               </div>
             </div>
-            <div class="col-md-7">
-               <h2 class="about__header">O Woreczki24.pl</h2>
-               <p>
-                  Oferujemy szeroką gamę torebek strunowych wykonanych z papieru kraft, folii PET/PE, aluminium połączonych w laminaty dwu lub trzy warstwowe. W naszej ofercie dostępne są torebki typu doypack z dnem, saszetki, opakowania fałdowe, worki z suwakiem, plomby oraz urządzenia zgrzewające. Nowością są torebki papierowe eco WINDOW z dużym okienkiem lub bez okienka. Tego typu opakowania przeznaczone są za równo do produktów suchych jak i tłustych. Sukcesywnie staramy się poszerzać ofertę opakowań doypack w co raz to nowsze modele. W tym roku do sprzedaży wprowadzamy torebki doypack eco z okienkiem wąskim.
-               </p>
-            </div>
-         </div>
+         <?php endif; ?>
 
          <div class="grid grid--col-4 grid--gap-30 adventages mgtb-80 row">
             <div class="grid__item adventages__item stretchbox flexbox--nowrap col-md-3">

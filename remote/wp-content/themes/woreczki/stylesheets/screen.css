@@ -271,6 +271,16 @@ address {
   color: #fff;
 }
 
+.woocommerce-variation-availability {
+  display: none;
+}
+
+.woocommerce-Price-amount.amount {
+  color: #F65F5A;
+  font-weight: 700;
+  font-size: 3.4rem;
+}
+
 .container {
   padding: 0 20px;
   margin: 0 auto;
@@ -1040,21 +1050,8 @@ address {
   padding-bottom: 5px;
 }
 
-@media screen and (min-width: 992px) {
-  .col-2 {
-    columns: 2;
-    column-gap: 50px;
-    column-rule: 1px solid #000;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .col-2 {
-    column-gap: 200px;
-  }
-}
-
 .btn {
-  padding: 7px 20px;
+  padding: 8px 20px;
   display: inline-block;
   background-color: #F65F5A;
   text-align: center;
@@ -1734,6 +1731,9 @@ address {
   font-weight: 700;
   font-size: 2.2rem;
 }
+.shop__price .woocommerce-Price-amount.amount {
+  font-size: 2.2rem;
+}
 .shop__price--big {
   font-size: 3.4rem;
 }
@@ -1853,7 +1853,6 @@ address {
   .shop-item__price-box {
     -ms-flex-preferred-size: auto;
         flex-basis: auto;
-    margin-top: -8px;
   }
 }
 .shop-item__price-add {
@@ -1866,14 +1865,14 @@ address {
     width: auto;
   }
 }
-.shop-item__items-number {
+.shop-item__items-number, .variations select {
   margin: 15px 0;
   padding: 8px 20px;
   max-height: 33px;
   box-sizing: border-box;
 }
 @media screen and (min-width: 600px) {
-  .shop-item__items-number {
+  .shop-item__items-number, .variations select {
     margin: 0 30px;
   }
 }
@@ -1993,6 +1992,9 @@ address {
 }
 .shop-item__details-col h2 {
   font-size: 2rem;
+}
+.shop-item__details-col h2:not(:first-of-type) {
+  margin-top: 40px;
 }
 
 .shop-account {

@@ -74,10 +74,10 @@
 
   &__price-box {
     flex-basis: 100%;
-    
+
     @include media($breakpointXs){
       flex-basis: auto;
-      margin-top: -8px;
+      // margin-top: -8px;
     }
   }
 
@@ -136,7 +136,7 @@
     letter-spacing: 1px;
     box-sizing: border-box;
     text-transform: uppercase;
-    
+
     @include media($breakpointXs) {
       margin-top: 0;
       margin-right: 20px;
@@ -164,7 +164,7 @@
 
   &__profit-icon {
     width: 44px;
-    height: 36px; 
+    height: 36px;
     margin-right: 20px;
     background-repeat: no-repeat;
     box-sizing: border-box;
@@ -211,6 +211,9 @@
     flex: 1;
 
     h2{
+      &:not(:first-of-type) {
+         margin-top: 40px;
+      }
       font-size: 2rem;
     }
   }

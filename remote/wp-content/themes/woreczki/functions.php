@@ -212,18 +212,47 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
 
-// remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+add_action('woocommerce_single_product_summary', 'showShippingCost', 10);
+
+function showShippingCost(){
+   global $product;
+   $shipping_class_id = $product->get_shipping_class_id();
+   $shipping_class= $product->get_shipping_class();
+   $fee = 0;
+
+   if ($shipping_class_id) {
+      $flat_rates = get_option("woocommerce_flat_rates");
+      $fee = $flat_rates[$shipping_class]['cost'];
+   }
+
+   $flat_rate_settings = get_option("woocommerce_flat_rate_settings");
+   echo '<div class="shop-item__info"><div class="pdtb-5">Koszt wysyłki: <span class="text-bold"> od ' . ($flat_rate_settings['cost_per_order'] + $fee)."zł</span></div></div>";
+}
+
+
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+add_action('custom_related_products', 'woocommerce_output_related_products', 20);
 //
 //
 // remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 //
 //
 //
-// remove_action('woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20);
-// add_action('woocommerce_after_single_variation', 'woocommerce_single_variation_add_to_cart_button', 1);
+remove_action('woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20);
+add_action('woocommerce_after_single_variation', 'woocommerce_single_variation_add_to_cart_button', 2);
 //
 //
 // add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );    // 2.1 +
+
+// remove empty option
+add_filter( 'woocommerce_dropdown_variation_attribute_options_html', 'filter_dropdown_option_html', 12, 2 );
+function filter_dropdown_option_html( $html, $args ) {
+    $show_option_none_text = $args['show_option_none'] ? $args['show_option_none'] : __( 'Choose an option', 'woocommerce' );
+    $show_option_none_html = '<option value="">'.esc_html( $show_option_none_text ).'</option>';
+    $html = str_replace($show_option_none_html, '', $html);
+    return $html;
+}
+
 
 function woo_custom_cart_button_text() {
       //   return 'Add to cart';

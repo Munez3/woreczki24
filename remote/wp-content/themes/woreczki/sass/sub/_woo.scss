@@ -64,7 +64,25 @@
   color: #fff;
 }
 
+// PRODUKT
+
 .product_title.entry-title{
    @extend .shop-item__title;
    @extend .text-f20;
+}
+
+.woocommerce-variation-availability{
+   display: none;
+}
+
+.woocommerce-Price-amount.amount{
+   color: $red;
+   font-weight: 700;
+   font-size: 3.4rem;
+}
+
+.variations {
+   select {
+      @extend .shop-item__items-number;
+   }
 }
