@@ -5,6 +5,7 @@
    universal.init = function(){
       universal.cacheSelector();
       universal.bindEvents();
+      universal.gridListSwitch();
 
       if(universal.$slider.length > 0){
 
@@ -66,6 +67,48 @@
    universal.toggleSearch = function(){
       universal.$searchForm.toggleClass('search--active')
    }
+
+   universal.gridListSwitch = function() {
+      console.log(localStorage.getItem('shopView'))
+      const isGridLS = localStorage.getItem('shopView') === "grid";
+
+      const gridSwitcher = document.querySelector('#gridSwitcher').children;
+      const shopItemsContainer = document.querySelector('.shop > ul');
+
+      changeView(isGridLS);
+
+      for (let i = 0; i < gridSwitcher.length; i++) {
+         const child = gridSwitcher[i];
+         child.addEventListener('click', (e)=> {
+            // gridSwitcher[0].classList.remove('gridSwitcher__item--active');
+            // gridSwitcher[1].classList.remove('gridSwitcher__item--active');
+
+            e.target.classList.add('gridSwitcher__item--active');
+
+            const isGrid = e.target.id ==="switchGrid";
+
+            changeView(isGrid);
+
+         })
+      }
+
+      function changeView(isGrid) {
+         gridSwitcher[0].classList.remove('gridSwitcher__item--active');
+         gridSwitcher[1].classList.remove('gridSwitcher__item--active');
+
+         if(isGrid) {
+            shopItemsContainer.classList.add('grid');
+            gridSwitcher[0].classList.add('gridSwitcher__item--active');
+            localStorage.setItem('shopView', 'grid');
+         } else {
+            shopItemsContainer.classList.remove('grid');
+            gridSwitcher[1].classList.add('gridSwitcher__item--active');
+            localStorage.setItem('shopView', 'list');
+         }
+      }
+
+
+   };
 
 
    window.shop = {};

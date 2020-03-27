@@ -38,6 +38,10 @@ if ( is_singular( 'product' ) ) { ?>
 
       <?php get_template_part('sidebar'); ?>
       <main class="shop">
+          <div id="gridSwitcher" class="gridSwitcher">
+              <span id="switchGrid" class="gridSwitcher__item gridSwitcher__item--grid"></span>
+              <span id="switchList" class="gridSwitcher__item gridSwitcher__item--list"></span>
+          </div>
          <?php woocommerce_content(); ?>
       </main>
    </div>

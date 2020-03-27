@@ -1607,22 +1607,22 @@ address {
   border: 1px solid #D6D7D9;
   padding: 30px;
 }
-.shop-sidebar__item h2 {
+.shop-sidebar__title {
   font-size: 1.8rem;
   margin-bottom: 20px;
 }
-.shop-sidebar__item ul {
+.shop-sidebar-category {
   font-size: 1.6rem;
   font-weight: 600;
 }
-.shop-sidebar__item ul ul {
+.shop-sidebar-category--sub {
   margin-top: 20px;
   margin-left: 30px;
 }
-.shop-sidebar__item li {
+.shop-sidebar-category__item {
   margin-bottom: 20px;
 }
-.shop-sidebar__item a:hover {
+.shop-sidebar-category a:hover {
   color: #F65F5A;
 }
 
@@ -1766,6 +1766,33 @@ address {
   min-width: 260px;
   font-family: "Open Sans", sans-serif;
   border: 1px solid #D6D7D9;
+}
+
+.gridSwitcher {
+  display: -ms-flexbox;
+  display: flex;
+  width: 70px;
+}
+.gridSwitcher__item {
+  font-size: 3rem;
+}
+.gridSwitcher__item:hover {
+  cursor: pointer;
+  color: #F65F5A;
+}
+.gridSwitcher__item--grid {
+  margin-right: 10px;
+}
+.gridSwitcher__item--grid:before {
+  font-family: FontAwesome;
+  content: '\f00a';
+}
+.gridSwitcher__item--list:before {
+  font-family: FontAwesome;
+  content: '\f03a';
+}
+.gridSwitcher__item--active {
+  color: #F65F5A;
 }
 
 .about {
