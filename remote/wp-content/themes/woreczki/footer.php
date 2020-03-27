@@ -1,111 +1,67 @@
+<?php $footer_id = 58; ?>
+
 <footer>
       <div class="container">
          <?php if(!is_singular( 'product' )): ?>
-            <div class="about row mgtb-80 flexbox">
-               <div class="col-md-5">
-                  <img src="./img/etykieta-wit-c-5kg.svg" alt="" class="img">
-               </div>
-               <div class="col-md-7">
-                  <h2 class="about__header">O Woreczki24.pl</h2>
-                  <p>
-                     Oferujemy szeroką gamę torebek strunowych wykonanych z papieru kraft, folii PET/PE, aluminium połączonych w laminaty dwu lub trzy warstwowe. W naszej ofercie dostępne są torebki typu doypack z dnem, saszetki, opakowania fałdowe, worki z suwakiem, plomby oraz urządzenia zgrzewające. Nowością są torebki papierowe eco WINDOW z dużym okienkiem lub bez okienka. Tego typu opakowania przeznaczone są za równo do produktów suchych jak i tłustych. Sukcesywnie staramy się poszerzać ofertę opakowań doypack w co raz to nowsze modele. W tym roku do sprzedaży wprowadzamy torebki doypack eco z okienkiem wąskim.
-                  </p>
-               </div>
-            </div>
+            <?php if(get_field('about', $footer_id)): ?>
+               <?php while(have_rows('about', $footer_id)): the_row(); ?>
+                  <div class="about row mgtb-80 flexbox">
+                     <div class="col-md-5">
+                        <?php $img = get_sub_field('image'); ?>
+                        <img src="<?= $img['url']; ?>" alt="<?= $img['alt']; ?>" class="img">
+                     </div>
+                     <div class="col-md-7">
+                        <h2 class="about__header"><?php the_sub_field('header'); ?></h2>
+                        <?php the_sub_field('content'); ?>
+                     </div>
+                  </div>
+               <?php endwhile; ?>
+            <?php endif;?>
          <?php endif; ?>
 
-         <div class="grid grid--col-4 grid--gap-30 adventages mgtb-80 row">
-            <div class="grid__item adventages__item stretchbox flexbox--nowrap col-md-3">
-               <div class="adventages__icon" style="background-image: url('./img/ico_szybka-przesylka.svg');"></div>
-               <div>
-                  <h3>Szybka przesyłka</h3>
-                  <p>
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-               </div>
-            </div>
-            <div class="grid__item adventages__item stretchbox flexbox--nowrap col-md-3">
-               <div class="adventages__icon" style="background-image: url('./img/ico_szybka-przesylka.svg');"></div>
-               <div>
-                  <h3>Bezpieczne transakcje</h3>
-                  <p>
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-               </div>
-            </div>
-            <div class="grid__item adventages__item stretchbox flexbox--nowrap col-md-3">
-               <div class="adventages__icon" style="background-image: url('./img/ico_pomoc-obslugi.svg');"></div>
-               <div>
-                  <h3>Pomoc obsługi</h3>
-                  <p>
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-               </div>
-            </div>
-            <div class="grid__item adventages__item stretchbox flexbox--nowrap col-md-3">
-               <div class="adventages__icon" style="background-image: url('./img/ico_wysoka-jakosc.svg');"></div>
-               <div>
-                  <h3>Wysoka jakość</h3>
-                  <p>
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-               </div>
+         <?php if(get_field('profits', $footer_id)): ?>
+            <div class="grid grid--col-4 grid--gap-30 adventages mgtb-80 row">
+               <?php while(have_rows('profits', $footer_id)): the_row(); ?>
+                  <div class="grid__item adventages__item stretchbox flexbox--nowrap col-md-3">
+                     <div class="adventages__icon" style="background-image: url('<?php the_sub_field('icon'); ?>');"></div>
+                     <div>
+                        <h3><?php the_sub_field('header'); ?></h3>
+                        <?php the_sub_field('text'); ?>
+                     </div>
+                  </div>
+               <?php endwhile; ?>
             </div>
          </div>
-      </div>
+      <?php endif; ?>
 
       <div class="footer">
          <div class="container flexbox flexbox--sbet flexbox--baseline">
             <div class="footer__col">
                <h2 class="footer__header">Kategorie</h2>
-               <ul class="footer__nav">
-                  <li class="footer__nav-item">
-                     <a href="">Fałdowe</a>
-                  </li>
-                  <li class="footer__nav-item">
-                     <a href="">Alumioniowe</a>
-                  </li>
-                  <li class="footer__nav-item">
-                     <a href="">Bezbarwne</a>
-                  </li>
-                  <li class="footer__nav-item">
-                     <a href="">Kolorowe</a>
-                  </li>
-                  <li class="footer__nav-item">
-                     <a href="">Papierowe</a>
-                  </li>
-               </ul>
+               <?php wp_nav_menu(array(
+                  'theme_location' => 'nav-footer-category',
+                  'menu_class' => 'footer__nav',
+                  'menu_id' => '',
+                  'container' => ''
+               )); ?>
             </div>
             <div class="footer__col">
                <h2 class="footer__header">Konto</h2>
-               <ul class="footer__nav">
-                  <li class="footer__nav-item">
-                     <a href="">Zaloguj się</a>
-                  </li>
-                  <li class="footer__nav-item">
-                     <a href="">Historia zamówień</a>
-                  </li>
-                  <li class="footer__nav-item">
-                     <a href="">Moje dane</a>
-                  </li>
-                  <li class="footer__nav-item">
-                     <a href="">Moje adresy</a>
-                  </li>
-               </ul>
+               <?php wp_nav_menu(array(
+                  'theme_location' => 'nav-footer-acc',
+                  'menu_class' => 'footer__nav',
+                  'menu_id' => '',
+                  'container' => ''
+               )); ?>
             </div>
             <div class="footer__col">
                <h2 class="footer__header">Sklep</h2>
-               <ul class="footer__nav">
-                  <li class="footer__nav-item">
-                     <a href="">Regulamin sklepu</a>
-                  </li>
-                  <li class="footer__nav-item">
-                     <a href="">Regulamin ochrony danych osobowych</a>
-                  </li>
-                  <li class="footer__nav-item">
-                     <a href="">Polityka prywatności</a>
-                  </li>
-               </ul>
+               <?php wp_nav_menu(array(
+                  'theme_location' => 'nav-footer',
+                  'menu_class' => 'footer__nav',
+                  'menu_id' => '',
+                  'container' => ''
+               )); ?>
             </div>
             <div class="footer__col">
                <h2 class="footer__header">Dostarczamy przez</h2>

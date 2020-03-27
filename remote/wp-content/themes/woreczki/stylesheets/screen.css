@@ -1413,6 +1413,12 @@ address {
 
 .adventages__item {
   font-size: 1.4rem;
+  min-height: 55px;
+}
+@media screen and (min-width: 2000px) {
+  .adventages__item {
+    min-height: 70px;
+  }
 }
 .adventages__icon {
   -ms-flex: 1 0 100px;

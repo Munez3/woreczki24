@@ -32,7 +32,9 @@ add_action( 'init', 'register_menu' );
 function register_menu() {
   register_nav_menus(array(
     'nav-main' => 'Menu Główne',
-    'nav-footer' => 'Menu w stopce'
+    'nav-footer-category' => 'Stopka - kategorie',
+    'nav-footer-acc' => 'Stopka - konto',
+    'nav-footer' => 'Stopka - Sklep'
   ));
 }
 
@@ -70,7 +72,9 @@ add_filter('nav_menu_css_class', 'atg_menu_classes', 1, 3);
 function atg_menu_classes($classes, $item, $args) {
   if($args->theme_location == 'nav-main') {
     $classes[] = 'nav__item';
-  }
+   }else{
+     $classes[] = 'footer__nav-item';
+   }
   return $classes;
 }
 
