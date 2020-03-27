@@ -11,13 +11,13 @@
       $res = get_categories($args);
       // print_r($res);
       ?>
-      <ul class="shop-sidebar-category <?php echo $isSubcategory == true ? 'shop-sidebar-category--sub' : '' ?>">
+      <ul class="shop-sidebar-category <?php echo $isSubcategory == true ? 'shop-sidebar-category-sub' : '' ?>">
       <?php
       foreach ($res as $category) {
          $category_id = $category->term_id;
          if(!in_array($category->slug, $exclude)){
             ?>
-            <li class="shop-sidebar-category__item">
+            <li class="shop-sidebar-category__item <?php echo get_term_children($category_id, 'product_cat') ? 'shop-sidebar-category__item--has-sub' : '' ?>">
                <a href="<?= get_term_link($category->slug, 'product_cat'); ?>"><?= $category->name.' ('.$category->category_count.')' ?></a>
                <?php
                if(get_term_children($category_id, 'product_cat')){

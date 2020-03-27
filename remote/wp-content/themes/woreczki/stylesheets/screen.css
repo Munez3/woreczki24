@@ -1621,12 +1621,42 @@ address {
   font-size: 1.6rem;
   font-weight: 600;
 }
-.shop-sidebar-category--sub {
+.shop-sidebar-category-sub {
+  transition: all 1s;
   margin-top: 20px;
   margin-left: 30px;
+  display: none;
+}
+.shop-sidebar-category-sub--show {
+  display: block;
 }
 .shop-sidebar-category__item {
   margin-bottom: 20px;
+}
+.shop-sidebar-category__item--has-sub {
+  position: relative;
+}
+.shop-sidebar-category__item--has-sub:hover {
+  cursor: pointer;
+}
+.shop-sidebar-category__item--has-sub.sub-show {
+  transition: transform 0.3s;
+}
+.shop-sidebar-category__item--has-sub.sub-show:after {
+  transform: rotate(225deg);
+}
+.shop-sidebar-category__item--has-sub:after {
+  transition: transform 0.3s;
+  content: '';
+  position: absolute;
+  padding: 3px;
+  display: inline-block;
+  border: solid #333A41;
+  margin: 0 15px;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  right: 0;
+  top: 3px;
 }
 .shop-sidebar-category a:hover {
   color: #F65F5A;
@@ -1778,6 +1808,8 @@ address {
   display: -ms-flexbox;
   display: flex;
   width: 70px;
+  float: left;
+  margin-right: 40px;
 }
 .gridSwitcher__item {
   font-size: 3rem;
