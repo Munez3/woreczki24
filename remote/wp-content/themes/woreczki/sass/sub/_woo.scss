@@ -47,21 +47,22 @@
 }
 
 .woocommerce form .form-row label.checkbox {
-  display: flex;
   font-size: 1.6rem;
-  line-height: 1;
-  input {
-    flex: 0.1;
-  }
-
 }
 
 .woocommerce form .form-row .input-checkbox {
   margin: 0;
+  width: unset;
 }
 
 .woocommerce button.button:disabled[disabled] {
   color: #fff;
+}
+
+ul.payment_methods li input {
+  width: unset;
+  display: unset;
+
 }
 
 // PRODUKT
