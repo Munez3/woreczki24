@@ -1826,6 +1826,7 @@ address {
 }
 .gridSwitcher__item {
   font-size: 3rem;
+  width: 35px;
 }
 .gridSwitcher__item:hover {
   cursor: pointer;

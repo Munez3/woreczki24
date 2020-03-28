@@ -70,43 +70,41 @@
    }
 
    universal.gridListSwitch = function() {
-      console.log(localStorage.getItem('shopView'))
-      const isListLS = localStorage.getItem('shopView') === "list";
+      const switcher = document.querySelector('#gridSwitcher');
 
-      const gridSwitcher = document.querySelector('#gridSwitcher').children;
-      const shopItemsContainer = document.querySelector('.shop > ul');
+      if(switcher) {
+         const isListLS = localStorage.getItem('shopView') === "list";
 
-      changeView(isListLS);
+         const shopItemsContainer = document.querySelector('.shop > ul');
 
-      for (let i = 0; i < gridSwitcher.length; i++) {
-         const child = gridSwitcher[i];
-         child.addEventListener('click', (e)=> {
+         const grid = document.querySelector('[data-type="grid"]');
+         const list = document.querySelector('[data-type="list"]');
 
-            e.target.classList.add('gridSwitcher__item--active');
+         grid.addEventListener('click', () => click('grid'));
+         list.addEventListener('click', () => click('list'));
 
-            const isList = e.target.id ==="switchList";
-
+         function click(name) {
+            const isList = name === 'list';
             changeView(isList);
+         }
 
-         })
-      }
+         changeView(isListLS);
 
-      function changeView(isList) {
-         gridSwitcher[0].classList.remove('gridSwitcher__item--active');
-         gridSwitcher[1].classList.remove('gridSwitcher__item--active');
+         function changeView(isList) {
+            grid.classList.remove('gridSwitcher__item--active');
+            list.classList.remove('gridSwitcher__item--active');
 
-         if(isList) {
-            shopItemsContainer.classList.add('shop-list-view');
-            gridSwitcher[1].classList.add('gridSwitcher__item--active');
-            localStorage.setItem('shopView', 'list');
-         } else {
-            shopItemsContainer.classList.remove('shop-list-view');
-            gridSwitcher[0].classList.add('gridSwitcher__item--active');
-            localStorage.setItem('shopView', 'grid');
+            if(isList) {
+               shopItemsContainer.classList.add('shop-list-view');
+               list.classList.add('gridSwitcher__item--active');
+               localStorage.setItem('shopView', 'list');
+            } else {
+               shopItemsContainer.classList.remove('shop-list-view');
+               grid.classList.add('gridSwitcher__item--active');
+               localStorage.setItem('shopView', 'grid');
+            }
          }
       }
-
-
    };
 
 

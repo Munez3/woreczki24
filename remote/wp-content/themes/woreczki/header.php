@@ -16,7 +16,6 @@
    </title>
    <?php wp_head(); ?>
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/6af9fab092.js" crossorigin="anonymous"></script>
 </head>
 <body>
    <!-- <header class="header flexbox">
