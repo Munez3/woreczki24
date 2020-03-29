@@ -283,4 +283,19 @@
       border-width: 0 2px 2px 0;
       transform: rotate(-45deg);
    }
+
+   &--sidebar {
+      transition: transform 0.3s;
+      position: absolute;
+      border: solid #333A41;
+      margin: 0 15px;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+      right: 0;
+      top: 1px;
+      cursor: pointer;
+      padding: 5px;
+
+
+   }
 }

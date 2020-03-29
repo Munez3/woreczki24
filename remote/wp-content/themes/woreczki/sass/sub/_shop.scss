@@ -43,30 +43,11 @@
 
          &--has-sub {
             position: relative;
-            &:hover {
-               cursor: pointer;
-            }
-
             &.sub-show {
-               transition: transform 0.3s;
-               &:after {
+               .arrow {
+                  transition: transform 0.3s;
                   transform: rotate(225deg);
                }
-            }
-
-
-            &:after {
-               transition: transform 0.3s;
-               content: '';
-               position: absolute;
-               padding: 3px;
-               display: inline-block;
-               border: solid #333A41;
-               margin: 0 15px;
-               border-width: 0 3px 3px 0;
-               transform: rotate(45deg);
-               right: 0;
-               top: 3px;
             }
          }
       }

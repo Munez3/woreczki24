@@ -18,6 +18,9 @@
          if(!in_array($category->slug, $exclude)){
             ?>
             <li class="shop-sidebar-category__item <?php echo get_term_children($category_id, 'product_cat') ? 'shop-sidebar-category__item--has-sub' : '' ?>">
+                <?php if(get_term_children($category_id, 'product_cat')){
+                    echo '<span class="arrow arrow--sidebar"></span>';
+                } ?>
                <a href="<?= get_term_link($category->slug, 'product_cat'); ?>"><?= $category->name.' ('.$category->category_count.')' ?></a>
                <?php
                if(get_term_children($category_id, 'product_cat')){
