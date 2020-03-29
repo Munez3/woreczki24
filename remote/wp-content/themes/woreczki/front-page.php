@@ -4,19 +4,25 @@ Template name: Strona Główna
 */
 get_header(); ?>
 
-   <div class="slider slick-slider" data-slider="">
-      <?php while(have_rows('slider')): the_row(); ?>
-         <div class="slider__item" style="background-image: url('<?php the_sub_field('image'); ?>')">
-            <div class="container flexbox flexbox--col slider__100 text-center">
-               <div class="slider__title"><?php the_sub_field('header'); ?></div>
-               <div class="slider__line"></div>
-               <?php the_sub_field('content'); ?>
-               <a class="btn slider__btn" href="<?php the_sub_field('link'); ?>">
-                  <?php the_sub_field('link_text'); ?>
-               </a>
+   <div class="slider">
+      <div class="slick-slider" data-slider="">
+         <?php while(have_rows('slider')): the_row(); ?>
+            <div class="slider__item" style="background-image: url('<?php the_sub_field('image'); ?>')">
+               <div class="container flexbox flexbox--col slider__100 text-center">
+                  <div class="slider__title"><?php the_sub_field('header'); ?></div>
+                  <div class="slider__line"></div>
+                  <?php the_sub_field('content'); ?>
+                  <a class="btn slider__btn" href="<?php the_sub_field('link'); ?>">
+                     <?php the_sub_field('link_text'); ?>
+                  </a>
+               </div>
             </div>
-         </div>
-      <?php endwhile; ?>
+         <?php endwhile; ?>
+      </div>
+      <div id="slider-arrows" class="slider__arrows row">
+         <div id="slider-arrow-left" class="slider__arrow slider__arrow--left"></div>
+         <div id="slider-arrow-right" class="slider__arrow slider__arrow--right"></div>
+      </div>
    </div>
 
    <main>

@@ -1573,20 +1573,34 @@ ul.payment_methods li input {
   padding-left: 40px;
   padding-right: 40px;
 }
-.slider__pagination {
-  position: absolute;
-  right: 80px;
-  top: 50%;
+.slider__arrows {
+  display: none;
 }
-.slider__pagination-item {
-  margin: 6px 0;
-  width: 10px;
-  height: 10px;
-  background-color: #000;
-  opacity: 0.3;
+@media screen and (min-width: 1200px) {
+  .slider__arrows {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    display: block;
+    transform: translateY(-50%);
+  }
 }
-.slick-active .slider__pagination-item {
-  opacity: 1;
+.slider__arrows .slider__arrow {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-width: 0 2px 2px 0;
+  border-style: solid;
+  border-color: #999ca0;
+  cursor: pointer;
+}
+.slider__arrows .slider__arrow--left {
+  transform: rotate(135deg);
+}
+.slider__arrows .slider__arrow--right {
+  float: right;
+  transform: rotate(-45deg);
 }
 
 .shop-sidebar {

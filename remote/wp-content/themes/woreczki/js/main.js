@@ -11,17 +11,22 @@
       if(universal.$slider.length > 0){
 
          var sliderOptions = {
-            arrows: false,
             autoplay: true,
+            autoplaySpeed: 5000,
+            arrows: true,
             fade: true,
             infinite: true,
-            dots: true,
+            dots: false,
             focusOnSelect: false,
-            appendDots: "#slider-pager",
-            dotsClass: "slider__pagination flexbox flexbox--col ul-no-style",
-            customPaging: function(slider, pageIndex){
-               return '<div class="slider__pagination-item pointer"></div>';
-            }
+            appendArrows: '#slider-arrows',
+            prevArrow: '#slider-arrow-left',
+            nextArrow: '#slider-arrow-right',
+            // prevArrow:
+            // appendDots: "#slider-pager",
+            // dotsClass: "slider__pagination flexbox flexbox--col ul-no-style",
+            // customPaging: function(slider, pageIndex){
+            //    return '<div class="slider__pagination-item pointer"></div>';
+            // }
          }
       }
       universal.$slider.slick(sliderOptions);

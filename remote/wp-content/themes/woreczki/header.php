@@ -54,12 +54,17 @@
    </header> -->
 
    <header class="header">
-      <div class="header__contact">
-         <div class="container">
-            <a href="mailto:sklep@woreczki24.pl" class="header__contact-item"><span class="icon icon--mail"></span>sklep@woreczki24.pl</a>
-            <a href="" class="header__contact-item" ><span class="icon icon--phone"></span>732 324 970</a>
-         </div>
-      </div>
+      <?php if(get_field('contact', 58)): ?>
+         <?php while(have_rows('contact', 58)): the_row(); ?>
+            <div class="header__contact">
+               <div class="container">
+                  <a href="mailto:<?php the_sub_field('mail'); ?>" class="header__contact-item"><span class="icon icon--mail"></span><?php the_sub_field('mail'); ?></a>
+                  <?php $phone = get_sub_field('phone'); ?>
+                  <a href="tel://<?= preg_replace('/\s+/', '', $phone); ?>" class="header__contact-item" ><span class="icon icon--phone"></span><?= $phone; ?></a>
+               </div>
+            </div>
+         <?php endwhile; ?>
+      <?php endif; ?>
 
       <div class="header__main">
          <div class="container flexbox flexbox--sbet flexbox--nowrap">

@@ -63,28 +63,44 @@
                   'container' => ''
                )); ?>
             </div>
-            <div class="footer__col">
-               <h2 class="footer__header">Dostarczamy przez</h2>
-               <img src="./img/DPD_logo(red)2015.svg" alt="" class="footer__services-img">
-               <img src="./img/DPD_logo(red)2015.svg" alt="" class="footer__services-img">
-               <img src="./img/DPD_logo(red)2015.svg" alt="" class="footer__services-img">
-               <h2 class="footer__header">Płatność</h2>
-               <img src="./img/dotpay.svg" alt="" class="footer__services-img footer__services-img--small">
-               <img src="./img/paypal-logo-1.svg" alt="" class="footer__services-img footer__services-img--small">
-            </div>
-            <div class="footer__col">
-               <h2 class="footer__header">Kontakt</h2>
-               <a href="mailto:sklep@woreczki24.pl" class="footer__contact-item"><span class="icon icon--mail-red icon--big"></span><span>sklep@woreczki24.pl</span></a>
-               <a href="" class="footer__contact-item" ><span class="icon icon--phone-green icon--big"></span>732 324 970</a>
-            </div>
+            <?php if(get_field('shipping_payment', $footer_id)): ?>
+               <div class="footer__col">
+                  <?php while(have_rows('shipping_payment', $footer_id)): the_row(); ?>
+                     <h2 class="footer__header"><?php the_sub_field('header'); ?></h2>
+                     <?php while(have_rows('logos')): the_row(); ?>
+                        <?php
+                           $img = get_sub_field('logo');
+                           $img_class = '';
+                           if(in_array('small', get_sub_field('size'))){
+                              $img_class = 'footer__services-img--small';
+                           }
+                        ?>
+
+                        <img src="<?= $img['url']; ?>" alt="<?= $img['alt']; ?>" class="footer__services-img <?= $img_class ?>">
+                     <?php endwhile; ?>
+                  <?php endwhile; ?>
+               </div>
+            <?php endif; ?>
+            <?php if(get_field('contact', $footer_id)): ?>
+               <?php while(have_rows('contact', $footer_id)): the_row(); ?>
+                  <div class="footer__col">
+                     <h2 class="footer__header"><?php the_sub_field('header'); ?></h2>
+                     <a href="mailto:<?php the_sub_field('mail'); ?>" class="footer__contact-item"><span class="icon icon--mail-red icon--big"></span><span><?php the_sub_field('mail'); ?></span></a>
+                     <?php $phone = get_sub_field('phone'); ?>
+                     <a href="tel://<?= preg_replace('/\s+/', '', $phone); ?>" class="footer__contact-item" ><span class="icon icon--phone-green icon--big"></span><?php the_sub_field('phone'); ?></a>
+                  </div>
+               <?php endwhile; ?>
+            <?php endif; ?>
          </div>
       </div>
 
       <div class="container rights flexbox flexbox--sbet">
          <p>
-            Wszelkie prawa zastrzeżone
+            Wszelkie prawa zastrzeżone - Woreczki24.pl
          </p>
-         <img src="./img/mr_logo.png" alt="" class="author">
+         <a href="http://mroman.pl/">
+            <img src="<?= getPath(); ?>/img/mr_logo.png" alt="" class="author">
+         </a>
       </div>
    </footer>
 
