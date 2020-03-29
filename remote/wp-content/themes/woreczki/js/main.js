@@ -77,15 +77,15 @@
 
          const shopItemsContainer = document.querySelector('.shop > ul');
 
+         const $gridSwitcher = $('#gridSwitcher');
+
          const grid = document.querySelector('[data-type="grid"]');
          const list = document.querySelector('[data-type="list"]');
 
-         grid.addEventListener('click', () => click('grid'));
-         list.addEventListener('click', () => click('list'));
+         $gridSwitcher.on('click', 'svg', click)
 
-         function click(name) {
-            const isList = name === 'list';
-            changeView(isList);
+         function click() {
+            changeView($(this).data('type') === 'list');
          }
 
          changeView(isListLS);
