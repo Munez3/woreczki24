@@ -1061,9 +1061,16 @@ ul.payment_methods li input {
   box-sizing: border-box;
   cursor: pointer;
   text-transform: uppercase;
+  transition: 200ms;
+}
+.btn:hover {
+  background-color: #f3302a;
 }
 .btn--gray {
   background-color: #999ca0;
+}
+.btn--gray:hover {
+  background-color: #7f8287;
 }
 .btn--min-w150 {
   min-width: 150px;
@@ -1665,8 +1672,11 @@ ul.payment_methods li input {
   transition: transform 0.3s;
   transform: rotate(225deg);
 }
-.shop-sidebar-category a:hover {
+.shop-sidebar-category__item--active > a {
   color: #F65F5A;
+}
+.shop-sidebar-category a:hover {
+  color: #f98e8a;
 }
 
 .shop {

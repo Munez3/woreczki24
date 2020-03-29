@@ -9,15 +9,18 @@
       );
 
       $res = get_categories($args);
-      // print_r($res);
       ?>
       <ul class="shop-sidebar-category <?php echo $isSubcategory == true ? 'shop-sidebar-category-sub' : '' ?>">
       <?php
+      $query = get_query_var('term');
       foreach ($res as $category) {
          $category_id = $category->term_id;
+
          if(!in_array($category->slug, $exclude)){
+            $class = $query == $category->slug ? 'shop-sidebar-category__item--active' : '';
+
             ?>
-            <li class="shop-sidebar-category__item <?php echo get_term_children($category_id, 'product_cat') ? 'shop-sidebar-category__item--has-sub' : '' ?>">
+            <li class="shop-sidebar-category__item <?php echo get_term_children($category_id, 'product_cat') ? 'shop-sidebar-category__item--has-sub' : '' ?> <?php echo $class; ?>">
                 <?php if(get_term_children($category_id, 'product_cat')){
                     echo '<span class="arrow arrow--sidebar"></span>';
                 } ?>

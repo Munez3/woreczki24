@@ -120,6 +120,11 @@
             $(this).parent().find(".shop-sidebar-category-sub").toggleClass('shop-sidebar-category-sub--show')
          }
       })
+
+      var $active = $('.shop-sidebar-category__item--active');
+      if($active.length > 0){
+         $active.parent().prevUntil('.arrow').prev().trigger('click');
+      }
    };
 
 

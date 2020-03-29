@@ -50,11 +50,15 @@
                }
             }
          }
+
+         &--active > a {
+            color: $red;
+         }
       }
 
       a {
          &:hover {
-            color: $red;
+            color: lighten($red, 10);
          }
       }
    }
