@@ -109,11 +109,10 @@
 
 
    universal.toggleSubCategories = function() {
-      $('.shop-sidebar-category__item').on('click', function () {
-         const sub = $(this).children()[1];
-         if(sub) {
-            $(this).toggleClass('sub-show');
-            $(this).find(".shop-sidebar-category-sub").toggleClass('shop-sidebar-category-sub--show')
+      $('.shop-sidebar-category__item').on('click','.arrow', function () {
+         if($(this).parent()) {
+            $(this).parent().toggleClass('sub-show');
+            $(this).parent().find(".shop-sidebar-category-sub").toggleClass('shop-sidebar-category-sub--show')
          }
       })
    };

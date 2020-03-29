@@ -1101,6 +1101,18 @@ ul.payment_methods li input {
   border-width: 0 2px 2px 0;
   transform: rotate(-45deg);
 }
+.arrow--sidebar {
+  transition: transform 0.3s;
+  position: absolute;
+  border: solid #333A41;
+  margin: 0 15px;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  right: 0;
+  top: 1px;
+  cursor: pointer;
+  padding: 5px;
+}
 
 .header {
   position: fixed;
@@ -1635,27 +1647,9 @@ ul.payment_methods li input {
 .shop-sidebar-category__item--has-sub {
   position: relative;
 }
-.shop-sidebar-category__item--has-sub:hover {
-  cursor: pointer;
-}
-.shop-sidebar-category__item--has-sub.sub-show {
+.shop-sidebar-category__item--has-sub.sub-show .arrow {
   transition: transform 0.3s;
-}
-.shop-sidebar-category__item--has-sub.sub-show:after {
   transform: rotate(225deg);
-}
-.shop-sidebar-category__item--has-sub:after {
-  transition: transform 0.3s;
-  content: '';
-  position: absolute;
-  padding: 3px;
-  display: inline-block;
-  border: solid #333A41;
-  margin: 0 15px;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
-  right: 0;
-  top: 3px;
 }
 .shop-sidebar-category a:hover {
   color: #F65F5A;
