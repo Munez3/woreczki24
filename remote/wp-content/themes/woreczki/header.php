@@ -71,7 +71,7 @@
             <div class="logo">
                <h1 class="logo__header">
                   <a href="<?= get_home_url(); ?>">
-                     <img src="<?= getPath(); ?>/img/woreczki-logo.svg" alt="Woreczki 24" class="logo__img">
+                     <img src="<?= getPath(); ?>/img/logo.svg" alt="Kofeina bezwodna" class="logo__img">
                   </a>
                </h1>
             </div>
@@ -87,10 +87,10 @@
                </span>
                <a href="<?= get_permalink( wc_get_page_id( 'cart' ) ) ?>" class="account__item">
                   <span class="icon icon--cart icon--big"></span>
-                  <span class="account__item-text">Koszyk</span>
                   <?php if($woocommerce->cart->cart_contents_count > 0){ ?>
                      <span class="cart-header__count text-center"><?php echo $woocommerce->cart->cart_contents_count; ?></span>
                   <?php } ?>
+                  <span class="account__item-text">Koszyk</span>
                </a>
                <a href="<?= get_permalink( wc_get_page_id( 'myaccount' ) ) ?>" class="account__item">
                   <span class="icon icon--user icon--big"></span>

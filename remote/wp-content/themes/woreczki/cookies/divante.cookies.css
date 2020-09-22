@@ -1,0 +1,50 @@
+#cookiesBar {
+	border-top: 1px solid #d7d7d7;
+    color: #666;
+	width: 100%;
+    padding: 2px 0;
+    position: fixed;
+        bottom: 0;
+        left: 0;
+    z-index: 9999999;
+    background: #F4F5F5;
+	text-align:center;
+}
+
+#cookiesBar a {
+    color: #F65F5A;
+}
+
+#cookiesBar p {
+    margin: 2px 0;
+	font-weight:400;
+    font-size: 11px;
+	text-align:center;
+	line-height:17px;
+	/*display:inline-block;*/
+}
+
+#cookiesBarWrap {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#cookiesBarClose {
+	width: 80px;
+	height: 30px;
+	background: #F65F5A;
+	text-align:center;
+	font-weight:400;
+	font-size:12px;
+	line-height:30px;
+	margin:auto;
+	margin-top:5px;
+	margin-bottom:5px;
+	cursor:pointer;
+	text-transform:uppercase;
+	display:inline-block;
+	margin-left:10px;
+}
+
+#cookiesBarClose a {color: #fff}

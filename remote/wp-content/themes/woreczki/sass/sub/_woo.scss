@@ -87,3 +87,16 @@ ul.payment_methods li input {
       @extend .shop-item__items-number;
    }
 }
+
+.cart-header__count{
+   position: absolute;
+   top: -10px;
+   left: 12px;
+   display: inline-block;
+   width: 20px;
+   height: 20px;
+   background-color: $red;
+   border-radius: 50%;
+   color: #fff;
+   line-height: 20px;
+}

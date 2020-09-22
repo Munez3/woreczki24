@@ -136,8 +136,9 @@ function woocommerce_template_loop_product_title_custom() {
 // display short description after title in shop loop
 add_action('woocommerce_after_shop_loop_item_title', 'show_short_description', 1);
 function show_short_description(){
-   global $product;
-   echo '<p class="shop__item-excerpt">'.$product->get_short_description().'</p>';
+   the_excerpt();
+   // global $product;
+   // echo '<p class="shop__item-excerpt">'.$product->get_short_description().'</p>';
 }
 
 // get default variation price
@@ -157,10 +158,12 @@ function custom_variation_price( $price, $product ) {
         }
         if($isDefVariation){
             $price = $variation['display_price'];
-            $variationType = $variation['attributes']['attribute_pa_amount'];
+            // $variationType = $variation['attributes']['attribute_pa_quantity'];
+            $variationType = $variation['weight_html'];
+            // print_r($variation);
         }
     }
-    $selectedPrice = '<div class="shop__price">'.wc_price($price).' / '.$variationType.'szt.</div>';
+    $selectedPrice = '<div class="shop__price">'.wc_price($price).' / '.$variationType.'</div>';
 
     return $selectedPrice;
 }
@@ -222,7 +225,28 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
 
+// add_action('woocommerce_single_product_summary','show_stock_status', 9);
 add_action('woocommerce_single_product_summary', 'showShippingCost', 10);
+// add_action('woocommerce_single_product_summary','show_stock', 11);
+
+// function show_stock_status() {
+//    global $product;
+//    $id = custom_default_variation_id(0, $product);
+//    echo $id;
+// }
+//
+// function show_stock() {
+//    global $product;
+//    $stock = get_post_meta( $product->ID, '_stock', true );
+//    echo $stock;
+//    // if ( $product->get_stock_quantity() ) { // if manage stock is enabled
+//    //    if ( number_format($product->get_stock_quantity(),0,'','') < 3 ) { // if stock is low
+//    //       echo '<div class="remaining">Only ' . number_format($product->get_stock_quantity(),0,'','') . ' left in stock!</div>';
+//    //    } else {
+//    //       echo '<div class="remaining">' . number_format($product->get_stock_quantity(),0,'','') . ' left in stock</div>';
+//    // 	}
+//    // }
+// }
 
 function showShippingCost(){
    global $product;
@@ -250,6 +274,7 @@ add_action('custom_related_products', 'woocommerce_output_related_products', 20)
 //
 remove_action('woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20);
 add_action('woocommerce_after_single_variation', 'woocommerce_single_variation_add_to_cart_button', 2);
+add_filter( 'woocommerce_show_variation_price', '__return_true' );
 //
 //
 // add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );    // 2.1 +

@@ -280,6 +280,19 @@ ul.payment_methods li input {
   font-size: 3.4rem;
 }
 
+.cart-header__count {
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #F65F5A;
+  border-radius: 50%;
+  color: #fff;
+  line-height: 20px;
+}
+
 .container {
   padding: 0 20px;
   margin: 0 auto;
@@ -1214,10 +1227,16 @@ ul.payment_methods li input {
       flex: 0 1 120px;
   box-sizing: border-box;
 }
+@media screen and (min-width: 600px) {
+  .logo {
+    -ms-flex: 0 1 50%;
+        flex: 0 1 50%;
+  }
+}
 @media screen and (min-width: 1200px) {
   .logo {
-    -ms-flex: 0 1 20%;
-        flex: 0 1 20%;
+    -ms-flex: 0 1 25%;
+        flex: 0 1 25%;
   }
 }
 .logo__header {
@@ -1225,7 +1244,7 @@ ul.payment_methods li input {
 }
 .logo__img {
   width: 100%;
-  max-width: 270px;
+  max-width: 315px;
   height: auto;
 }
 
@@ -1292,8 +1311,8 @@ ul.payment_methods li input {
   .search {
     position: static;
     padding: 0;
-    -ms-flex: 0 1 750px;
-        flex: 0 1 750px;
+    -ms-flex: 0 1 50%;
+        flex: 0 1 50%;
     display: block;
     transform: translateY(0);
     opacity: 1;
@@ -1319,9 +1338,12 @@ ul.payment_methods li input {
 }
 @media screen and (min-width: 1200px) {
   .account {
-    -ms-flex: 0 1 20%;
-        flex: 0 1 20%;
+    -ms-flex: 0 1 25%;
+        flex: 0 1 25%;
   }
+}
+.account__item {
+  position: relative;
 }
 @media screen and (min-width: 1200px) {
   .account__item {
@@ -1779,9 +1801,6 @@ ul.payment_methods li input {
     object-fit: contain;
   }
 }
-.shop__item-excerpt {
-  display: none;
-}
 .shop__price {
   color: #F65F5A;
   font-weight: 700;
@@ -1803,10 +1822,10 @@ ul.payment_methods li input {
   font-size: 1.4rem;
   font-weight: 600;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   .shop-list-view {
-    -ms-grid-columns: none;
-        grid-template-columns: none;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
   .shop-list-view .shop__item {
     -ms-flex-wrap: nowrap;
@@ -1816,6 +1835,8 @@ ul.payment_methods li input {
     border-bottom: 1px solid #D6D7D9;
     text-align: left;
     box-shadow: none;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
   }
   .shop-list-view .shop__content {
     display: block;
@@ -1964,7 +1985,7 @@ ul.payment_methods li input {
 .shop-item__items-number, .variations select {
   margin: 15px 0;
   padding: 8px 20px;
-  max-height: 33px;
+  max-height: 40px;
   box-sizing: border-box;
 }
 @media screen and (min-width: 600px) {
@@ -2085,6 +2106,12 @@ ul.payment_methods li input {
 .shop-item__details-col {
   -ms-flex: 1;
       flex: 1;
+}
+.shop-item__details-col:first-child {
+  margin-right: 30px;
+}
+.shop-item__details-col:last-child {
+  margin-left: 30px;
 }
 .shop-item__details-col h2 {
   font-size: 2rem;

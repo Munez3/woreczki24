@@ -48,7 +48,7 @@ get_header(); ?>
                while ($res->have_posts()) : $res->the_post();
                   global $product; ?>
                   <div class="grid__item shop__item text-center flexbox flexbox--col flexbox--sbet">
-                     <?= woocommerce_get_product_thumbnail(array('class' => ' shop__product-img')); ?>
+                     <a href="<?= get_permalink(); ?>"><?= woocommerce_get_product_thumbnail(array('class' => ' shop__product-img')); ?></a>
                      <div>
                         <?= custom_variation_price(0, $product); ?>
                         <h2 class="shop__product-name mgtb-20">
@@ -101,7 +101,8 @@ get_header(); ?>
                      while ($res->have_posts()) : $res->the_post();
                         global $product; ?>
                         <div class="grid__item shop__item text-center flexbox flexbox--col flexbox--sbet">
-                           <?= woocommerce_get_product_thumbnail(array('class' => ' shop__product-img')); ?>
+                           <a href="<?= get_permalink(); ?>"><?= woocommerce_get_product_thumbnail(array('class' => ' shop__product-img')); ?></a>
+
                            <div>
                               <div class="shop__price">27zł / 100 szt.</div>
                               <h2 class="shop__product-name mgtb-20">

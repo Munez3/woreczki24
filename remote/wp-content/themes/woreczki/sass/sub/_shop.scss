@@ -166,7 +166,7 @@
    }
 
    &__item-excerpt{
-      display: none;
+      // display: none;
    }
 
    &__price{
@@ -197,9 +197,9 @@
       font-weight: 600;
    }
 
-   @include media($breakpointMd){
+   @include media($breakpointLg){
       &-list-view{
-         grid-template-columns: none;
+         grid-template-columns: repeat(2, 1fr);
       }
 
       &-list-view &__item{
@@ -208,6 +208,7 @@
          border-bottom: 1px solid $grayLight;
          text-align: left;
          box-shadow: none;
+         justify-content: flex-start;
       }
 
       &-list-view &__content{
